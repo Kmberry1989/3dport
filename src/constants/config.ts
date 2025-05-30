@@ -40,13 +40,13 @@ type TConfig = {
 
 export const config: TConfig = {
   html: {
-    title: "Rochelle Berry — 3D Portfolio",
+    title: "Rochelle Berry — Portfolio",
     fullName: "Rochelle Berry",
     email: "rochelleberry731@gmail.com",
   },
   hero: {
     name: "Rochelle Berry",
-    p: ["I develop 3D visuals, user", "interfaces and web applications"],
+    p: ["Creative Strategist", "& Digital Storyteller"],
   },
   contact: {
     p: "Get in touch",
@@ -67,28 +67,20 @@ export const config: TConfig = {
     about: {
       p: "Introduction",
       h2: "Overview.",
-      content: `I'm a skilled software developer with experience in TypeScript and
-      JavaScript, and expertise in frameworks like React, Node.js, and
-      Three.js. I'm a quick learner and collaborate closely with clients to
-      create efficient, scalable, and user-friendly solutions that solve
-      real-world problems. Let's work together to bring your ideas to life!`,
+      content: `A dynamic and creative professional with a passion for fostering innovative experiences. I specialize in bringing ideas to life through compelling visual and digital strategies, connecting communities, and building lasting partnerships.`,
     },
     experience: {
       p: "What I have done so far",
       h2: "Work Experience.",
     },
     feedbacks: {
-      p: "What others say",
-      h2: "Testimonials.",
+      p: "My job",
+      h2: "ing Engaging Digital Experiences That Connect & Inspire..",
     },
     works: {
       p: "My work",
       h2: "Projects.",
-      content: `Following projects showcases my skills and experience through
-    real-world examples of my work. Each project is briefly described with
-    links to code repositories and live demos in it. It reflects my
-    ability to solve complex problems, work with different technologies,
-    and manage projects effectively.`,
+      content: `A dynamic and creative professional with a passion for fostering innovative experiences, connecting communities, and building partnerships. With a strong background in event planning, digital marketing, and administrative support, I thrive on bringing ideas to life and driving engagement through compelling visual and digital strategies. I'm now seeking to leverage my diverse skillset in a dedicated Creative Digital Design role.`,
     },
   },
 };
