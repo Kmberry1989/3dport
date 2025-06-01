@@ -75,7 +75,7 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`${
-                active === nav.id ? "text-white" : "text-white"
+                active === nav.id ? "text-black" : "text-teal"
               } cursor-pointer text-[20px] font-medium hover:text-teal`}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
