@@ -75,7 +75,7 @@ export const config: TConfig = {
     },
     feedbacks: {
       p: "My job",
-      h2: "ing Engaging Digital Experiences That Connect & Inspire..",
+      h2: "Creating Engaging Digital Experiences That Connect & Inspire.",
     },
     works: {
       p: "My work",
