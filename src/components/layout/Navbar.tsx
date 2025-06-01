@@ -65,7 +65,7 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt="logo" className="h-28 w-28 object-contain" />
-          <p className="flex cursor-pointer text-[24px] font-bold text-white ">
+          <p className="flex cursor-pointer text-[24px] font-bold text-teal ">
             {config.html.title}
           </p>
         </Link>
