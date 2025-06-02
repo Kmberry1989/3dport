@@ -24,10 +24,9 @@ import {
   git,
   figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
+  theatre,
+  iuk,
+  lhs,
   carrent,
   jobit,
   tripguide,
@@ -115,7 +114,7 @@ const experiences: TExperience[] = [
   {
     title: "Social Media Management",
     companyName: "IUK Staff Council",
-    icon: starbucks, // Placeholder
+    icon: iuk, // Placeholder
     iconBg: "#383E56",
     date: "Fall 2024 - Present",
     points: [
@@ -128,7 +127,7 @@ const experiences: TExperience[] = [
   {
     title: "Workshop & Event Planner",
     companyName: "IUK CTLA",
-    icon: tesla, // Placeholder
+    icon: iuk, // Placeholder
     iconBg: "#E6DEDD",
     date: "Fall 2022 - Fall 2023",
     points: [
@@ -141,7 +140,7 @@ const experiences: TExperience[] = [
   {
     title: "Event Organizer",
     companyName: "LHS Class of 2009",
-    icon: shopify, // Placeholder
+    icon: lhs, // Placeholder
     iconBg: "#383E56",
     date: "Fall 2024",
     points: [
@@ -154,7 +153,7 @@ const experiences: TExperience[] = [
   {
     title: "Bar Manager/Bartender",
     companyName: "Logansport State Theatre",
-    icon: meta, // Placeholder
+    icon: theatre, // Placeholder
     iconBg: "#E6DEDD",
     date: "Summer 2021 - Fall 2022",
     points: [
