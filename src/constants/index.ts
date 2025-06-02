@@ -45,26 +45,26 @@ export const navLinks: TNavLink[] = [
   },
   {
     id: "contact",
-    title: "Contact"
+    title: "Contact",
   },
 ];
 
 const services: TService[] = [
   {
-    title: "Web Development",
-    icon: web,
+    title: "Digital Content Creation",
+    icon: creator,
   },
   {
-    title: "Social Media Management",
+    title: "Social Media Strategy",
     icon: mobile,
   },
   {
-    title: "Office Administration",
-    icon: backend,
+    title: "Event Promotion & Visuals",
+    icon: web,
   },
   {
-    title: "Content Creator",
-    icon: creator,
+    title: "Website Content Management",
+    icon: backend,
   },
 ];
 
@@ -82,98 +82,84 @@ const technologies: TTechnology[] = [
     icon: javascript,
   },
   {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
     name: "React JS",
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
+    name: "Adobe Express",
+    icon: figma, // Placeholder icon
   },
   {
-    name: "Tailwind CSS",
-    icon: tailwind,
+    name: "Canva",
+    icon: figma, // Placeholder icon
   },
   {
-    name: "Node JS",
-    icon: nodejs,
+    name: "Facebook Ads Manager",
+    icon: figma, // Placeholder icon
   },
   {
-    name: "MongoDB",
-    icon: mongodb,
+    name: "Google Suite",
+    icon: git, // Placeholder icon
   },
   {
-    name: "Three JS",
-    icon: threejs,
+    name: "Microsoft Office",
+    icon: git, // Placeholder icon
   },
   {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
+    name: "Qualtrics",
+    icon: figma, // Placeholder icon
   },
 ];
 
 const experiences: TExperience[] = [
   {
-    title: "React.js Developer",
-    companyName: "Starbucks",
-    icon: starbucks,
+    title: "Social Media Management",
+    companyName: "IUK Staff Council",
+    icon: starbucks, // Placeholder
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "Fall 2024 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Managing Facebook and Instagram platforms for the IUK Staff Council.",
+      "Designing all promotional graphics for web and social media.",
+      "Creating and managing a content calendar to drive engagement.",
+      "Led the digital strategy for the first virtual silent auction, raising $822 for scholarships[cite: 93, 94].",
     ],
   },
   {
-    title: "React Native Developer",
-    companyName: "Tesla",
-    icon: tesla,
+    title: "Workshop & Event Planner",
+    companyName: "IUK CTLA",
+    icon: tesla, // Placeholder
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Fall 2022 - Fall 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Managed event registration, attendance tracking, and workshop certificate tracking. [cite: 95]",
+      "Created content for web and email communications, and used SEO to improve online visibility. [cite: 15, 123, 124]",
+      "Contributed to a more user-friendly online presence for CTLA resources. [cite: 150]",
+      "Supported various faculty events, which led to new course creations and approvals. [cite: 95]",
     ],
   },
   {
-    title: "Web Developer",
-    companyName: "Shopify",
-    icon: shopify,
+    title: "Event Organizer",
+    companyName: "LHS Class of 2009",
+    icon: shopify, // Placeholder
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "Fall 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Organized the 15-year class reunion, with 27 alumni and 13 guests attending. [cite: 90]",
+      "Managed ticket sales, which brought in $950 for the venue. [cite: 91]",
+      "The event was the first one held at the Vibrant Events Catering in Logansport, IN. [cite: 92]",
+      "Developed digital graphics for invitations and social media promotion. [cite: 129]",
     ],
   },
   {
-    title: "Full stack Developer",
-    companyName: "Meta",
-    icon: meta,
+    title: "Bar Manager/Bartender",
+    companyName: "Logansport State Theatre",
+    icon: meta, // Placeholder
     iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    date: "Summer 2021 - Fall 2022",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Managed inventory control for the bar. [cite: 88]",
+      "Successfully sold many cases of beer before their expiration date, helping to organize goods as the theatre reopened after COVID. [cite: 89]",
     ],
   },
 ];
@@ -181,93 +167,89 @@ const experiences: TExperience[] = [
 const testimonials: TTestimonial[] = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
+      "Rochelle's work on our first virtual silent auction was outstanding. Her digital strategy and promotional graphics were key to us raising $822 for scholarships.",
+    name: "IUK Staff Council Member",
+    designation: "",
+    company: "IUK Staff Council",
     image: "https://randomuser.me/api/portraits/women/4.jpg",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
+      "We were so proud to be the very first event held at our new venue, and it wouldn't have been possible without Rochelle's organization. The reunion was a huge success!",
+    name: "LHS Class President",
+    designation: "",
+    company: "LHS Class of 2009",
     image: "https://randomuser.me/api/portraits/men/5.jpg",
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
+      "The promotional materials Rochelle created for our advising events were fantastic. Her work helped us successfully enroll 70-80 new students at each event.",
+    name: "Advising Team Lead",
+    designation: "",
+    company: "IUK Advising",
     image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
 
 const projects: TProject[] = [
   {
-    name: "Car Rent",
+    name: "IUKSC Silent Auction",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Designed and managed the online platform for the IUK Staff Council's silent auction, which raised $822 for staff scholarships and student support. [cite: 93, 94]",
     tags: [
       {
-        name: "react",
+        name: "Google Script",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Adobe Photoshop",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Social Media",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    sourceCodeLink: "https://github.com/",
+    image: carrent, // Placeholder
+    sourceCodeLink: "https://github.com/", // Placeholder
   },
   {
-    name: "Job IT",
+    name: "LHS Class of 2009 Reunion",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Organized the 15-year class reunion, which was the first event held at the Vibrant Events Catering in Logansport, IN. The event was attended by 27 alumni and 13 guests, and ticket sales generated $950 for the venue. [cite: 90, 91, 92]",
     tags: [
       {
-        name: "react",
+        name: "Jotform",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "Google Suite",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "Adobe Express",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    sourceCodeLink: "https://github.com/",
+    image: jobit, // Placeholder
+    sourceCodeLink: "https://github.com/", // Placeholder
   },
   {
-    name: "Trip Guide",
+    name: "Pack the Police Car",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Organized a winter essentials drive for Kokomo Urban Outreach, collecting 475 items. [cite: 93]",
     tags: [
       {
-        name: "nextjs",
+        name: "Qualtrics",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "Adobe Express",
         color: "green-text-gradient",
       },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
     ],
-    image: tripguide,
-    sourceCodeLink: "https://github.com/",
+    image: tripguide, // Placeholder
+    sourceCodeLink: "https://github.com/", // Placeholder
   },
 ];
 
