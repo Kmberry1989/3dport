@@ -1,0 +1,18 @@
+# Query: computer
+# ContextLines: 1
+
+3 results - 2 files
+
+README.md:
+   45  ├   ├   ├   ├── Ball.tsx
+   46: ├   ├   ├   ├── Computers.tsx
+   47  ├   ├   ├   ├── Earth.tsx
+
+  148  - [Three.js](https://threejs.org/): Three.js is a cross-browser JavaScript library and application
+  149:   programming interface used to create and display animated 3D computer graphics in a web browser
+  150    using WebGL.
+
+src\components\sections\Hero.tsx:
+  27  
+  28:       <C
+  29  

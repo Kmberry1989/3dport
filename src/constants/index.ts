@@ -45,21 +45,21 @@ export const navLinks: TNavLink[] = [
   },
   {
     id: "contact",
-    title: "Contact",
+    title: "Contact"
   },
 ];
 
 const services: TService[] = [
   {
-    title: "Web Developer",
+    title: "Web Development",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Social Media Management",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Office Administration",
     icon: backend,
   },
   {
