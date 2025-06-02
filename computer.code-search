@@ -1,18 +1,14 @@
-# Query: computer
+# Query: admin
 # ContextLines: 1
 
-3 results - 2 files
+2 results - 2 files
 
-README.md:
-   45  ├   ├   ├   ├── Ball.tsx
-   46: ├   ├   ├   ├── Computers.tsx
-   47  ├   ├   ├   ├── Earth.tsx
+src\constants\config.ts:
+  82        h2: "Projects.",
+  83:       content: `A dynamic and creative professional with a passion for fostering innovative experiences, connecting communities, and building partnerships. With a strong background in event planning, digital marketing, and administrative support, I thrive on bringing ideas to life and driving engagement through compelling visual and digital strategies. I'm now seeking to leverage my diverse skillset in a dedicated Creative Digital Design role.`,
+  84      },
 
-  148  - [Three.js](https://threejs.org/): Three.js is a cross-browser JavaScript library and application
-  149:   programming interface used to create and display animated 3D computer graphics in a web browser
-  150    using WebGL.
-
-src\components\sections\Hero.tsx:
-  27  
-  28:       <C
-  29  
+src\constants\index.ts:
+  61    {
+  62:     title: "OfficdAdministration",
+  63      icon: backend,

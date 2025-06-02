@@ -24,8 +24,7 @@ import threejs from "./tech/threejs.svg";
 import meta from "./company/meta.png";
 import lhs from "./company/lhs.png";
 import iuk from "./company/iuk.png";
-import iuk from "./company/iuk.png";
-
+import theatre from "./company/theatre.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
@@ -55,7 +54,7 @@ export {
   meta,
   lhs,
   iuk,
-  iuk,
+theatre,
   carrent,
   jobit,
   tripguide,
