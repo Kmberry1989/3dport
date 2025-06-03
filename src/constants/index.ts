@@ -13,6 +13,7 @@ import {
   creator,
   web,
   javascript,
+<<<<<<< HEAD
   html,
   css,
   reactjs,
@@ -24,6 +25,27 @@ import {
   carrent,
   jobit,
   tripguide,
+=======
+  typescript,
+  html,
+  css,
+  reactjs,
+  redux,
+  tailwind,
+  nodejs,
+  mongodb,
+  git,
+  figma,
+  docker,
+  meta,
+  starbucks,
+  tesla,
+  shopify,
+  carrent,
+  jobit,
+  tripguide,
+  threejs,
+>>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
@@ -43,6 +65,7 @@ export const navLinks: TNavLink[] = [
 
 const services: TService[] = [
   {
+<<<<<<< HEAD
     title: "Digital Content Creation",
     icon: creator,
   },
@@ -58,6 +81,23 @@ const services: TService[] = [
     title: "Website Content Management",
     icon: backend,
   },
+=======
+    title: "Web Developer",
+    icon: web,
+  },
+  {
+    title: "React Native Developer",
+    icon: mobile,
+  },
+  {
+    title: "Backend Developer",
+    icon: backend,
+  },
+  {
+    title: "Content Creator",
+    icon: creator,
+  },
+>>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
 ];
 
 const technologies: TTechnology[] = [
@@ -74,10 +114,18 @@ const technologies: TTechnology[] = [
     icon: javascript,
   },
   {
+<<<<<<< HEAD
+=======
+    name: "TypeScript",
+    icon: typescript,
+  },
+  {
+>>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
     name: "React JS",
     icon: reactjs,
   },
   {
+<<<<<<< HEAD
     name: "Adobe Express",
     icon: figma, // Placeholder icon
   },
@@ -100,11 +148,44 @@ const technologies: TTechnology[] = [
   {
     name: "Qualtrics",
     icon: figma, // Placeholder icon
+=======
+    name: "Redux Toolkit",
+    icon: redux,
+  },
+  {
+    name: "Tailwind CSS",
+    icon: tailwind,
+  },
+  {
+    name: "Node JS",
+    icon: nodejs,
+  },
+  {
+    name: "MongoDB",
+    icon: mongodb,
+  },
+  {
+    name: "Three JS",
+    icon: threejs,
+  },
+  {
+    name: "git",
+    icon: git,
+  },
+  {
+    name: "figma",
+    icon: figma,
+  },
+  {
+    name: "docker",
+    icon: docker,
+>>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
   },
 ];
 
 const experiences: TExperience[] = [
   {
+<<<<<<< HEAD
     title: "Social Media Management",
     companyName: "IUK Staff Council",
     icon: iuk, // Placeholder
@@ -152,6 +233,57 @@ const experiences: TExperience[] = [
     points: [
       "Managed inventory control for the bar.",
       "Successfully sold many cases of beer before their expiration date, helping to organize goods as the theatre reopened after COVID.",
+=======
+    title: "React.js Developer",
+    companyName: "Starbucks",
+    icon: starbucks,
+    iconBg: "#383E56",
+    date: "March 2020 - April 2021",
+    points: [
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Participating in code reviews and providing constructive feedback to other developers.",
+    ],
+  },
+  {
+    title: "React Native Developer",
+    companyName: "Tesla",
+    icon: tesla,
+    iconBg: "#E6DEDD",
+    date: "Jan 2021 - Feb 2022",
+    points: [
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Participating in code reviews and providing constructive feedback to other developers.",
+    ],
+  },
+  {
+    title: "Web Developer",
+    companyName: "Shopify",
+    icon: shopify,
+    iconBg: "#383E56",
+    date: "Jan 2022 - Jan 2023",
+    points: [
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Participating in code reviews and providing constructive feedback to other developers.",
+    ],
+  },
+  {
+    title: "Full stack Developer",
+    companyName: "Meta",
+    icon: meta,
+    iconBg: "#E6DEDD",
+    date: "Jan 2023 - Present",
+    points: [
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Participating in code reviews and providing constructive feedback to other developers.",
+>>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
     ],
   },
 ];
@@ -159,32 +291,54 @@ const experiences: TExperience[] = [
 const testimonials: TTestimonial[] = [
   {
     testimonial:
+<<<<<<< HEAD
       "Rochelle's work on our first virtual silent auction was outstanding. Her digital strategy and promotional graphics were key to us raising $822 for scholarships.",
     name: "IUK Staff Council Member",
     designation: "",
     company: "IUK Staff Council",
+=======
+      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    name: "Sara Lee",
+    designation: "CFO",
+    company: "Acme Co",
+>>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
     image: "https://randomuser.me/api/portraits/women/4.jpg",
   },
   {
     testimonial:
+<<<<<<< HEAD
       "We were so proud to be the very first event held at our new venue, and it wouldn't have been possible without Rochelle's organization. The reunion was a huge success!",
     name: "LHS Class President",
     designation: "",
     company: "LHS Class of 2009",
+=======
+      "I've never met a web developer who truly cares about their clients' success like Rick does.",
+    name: "Chris Brown",
+    designation: "COO",
+    company: "DEF Corp",
+>>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
     image: "https://randomuser.me/api/portraits/men/5.jpg",
   },
   {
     testimonial:
+<<<<<<< HEAD
       "The promotional materials Rochelle created for our advising events were fantastic. Her work helped us successfully enroll 70-80 new students at each event.",
     name: "Advising Team Lead",
     designation: "",
     company: "IUK Advising",
+=======
+      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+    name: "Lisa Wang",
+    designation: "CTO",
+    company: "456 Enterprises",
+>>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
     image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
 
 const projects: TProject[] = [
   {
+<<<<<<< HEAD
     name: "IUKSC Silent Auction",
     description:
       "Designed and managed the online platform for the IUK Staff Council's silent auction, which raised $822 for staff scholarships and student support.  93, 94]",
@@ -246,3 +400,70 @@ const projects: TProject[] = [
 ];
 
 export { services, technologies, experiences, testimonials, projects };
+=======
+    name: "Car Rent",
+    description:
+      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: carrent,
+    sourceCodeLink: "https://github.com/",
+  },
+  {
+    name: "Job IT",
+    description:
+      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "restapi",
+        color: "green-text-gradient",
+      },
+      {
+        name: "scss",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: jobit,
+    sourceCodeLink: "https://github.com/",
+  },
+  {
+    name: "Trip Guide",
+    description:
+      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "supabase",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: tripguide,
+    sourceCodeLink: "https://github.com/",
+  },
+];
+
+export { services, technologies, experiences, testimonials, projects };
+>>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41

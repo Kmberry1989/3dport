@@ -64,8 +64,13 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
+<<<<<<< HEAD
           <img src={logo} alt="logo" className="h-28 w-28 object-contain" />
           <p className="flex cursor-pointer text-[24px] font-bold text-teal ">
+=======
+          <img src={logo} alt="logo" className="h-9 w-9 object-contain" />
+          <p className="flex cursor-pointer text-[18px] font-bold text-white ">
+>>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
             {config.html.title}
           </p>
         </Link>
@@ -75,8 +80,13 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`${
+<<<<<<< HEAD
                 active === nav.id ? "text-black" : "text-teal"
               } cursor-pointer text-[20px] font-medium hover:text-teal`}
+=======
+                active === nav.id ? "text-white" : "text-secondary"
+              } cursor-pointer text-[18px] font-medium hover:text-white`}
+>>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>

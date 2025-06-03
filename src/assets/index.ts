@@ -22,9 +22,16 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
 import meta from "./company/meta.png";
+<<<<<<< HEAD
 import lhs from "./company/lhs.png";
 import iuk from "./company/iuk.png";
 import theatre from "./company/theatre.png";
+=======
+import shopify from "./company/shopify.png";
+import starbucks from "./company/starbucks.png";
+import tesla from "./company/tesla.png";
+
+>>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
@@ -52,9 +59,15 @@ export {
   typescript,
   threejs,
   meta,
+<<<<<<< HEAD
   lhs,
   iuk,
 theatre,
+=======
+  shopify,
+  starbucks,
+  tesla,
+>>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
   carrent,
   jobit,
   tripguide,
