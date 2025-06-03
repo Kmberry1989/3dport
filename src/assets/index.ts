@@ -26,9 +26,6 @@ import meta from "./company/meta.png";
 import lhs from "./company/lhs.png";
 import iuk from "./company/iuk.png";
 import theatre from "./company/theatre.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -56,14 +53,10 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
  
   lhs,
   iuk,
   theatre,
-  shopify,
-  starbucks,
-  tesla,
   carrent,
   jobit,
   tripguide,
