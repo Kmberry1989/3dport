@@ -13,19 +13,6 @@ import {
   creator,
   web,
   javascript,
- 
-  html,
-  css,
-  reactjs,
-  git,
-  figma,
-  theatre,
-  iuk,
-  lhs,
-  carrent,
-  jobit,
-  tripguide,
-=======
   typescript,
   html,
   css,
@@ -38,14 +25,13 @@ import {
   figma,
   docker,
   meta,
-  starbucks,
-  tesla,
-  shopify,
   carrent,
   jobit,
   tripguide,
   threejs,
->>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
+  iuk,
+  lhs,
+  theatre,
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
@@ -65,7 +51,6 @@ export const navLinks: TNavLink[] = [
 
 const services: TService[] = [
   {
- 
     title: "Digital Content Creation",
     icon: creator,
   },
@@ -81,7 +66,7 @@ const services: TService[] = [
     title: "Website Content Management",
     icon: backend,
   },
-=======
+  {
     title: "Web Developer",
     icon: web,
   },
@@ -97,7 +82,6 @@ const services: TService[] = [
     title: "Content Creator",
     icon: creator,
   },
->>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
 ];
 
 const technologies: TTechnology[] = [
@@ -114,18 +98,14 @@ const technologies: TTechnology[] = [
     icon: javascript,
   },
   {
- 
-=======
     name: "TypeScript",
     icon: typescript,
   },
   {
->>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
     name: "React JS",
     icon: reactjs,
   },
   {
- 
     name: "Adobe Express",
     icon: figma, // Placeholder icon
   },
@@ -148,7 +128,8 @@ const technologies: TTechnology[] = [
   {
     name: "Qualtrics",
     icon: figma, // Placeholder icon
-=======
+  },
+  {
     name: "Redux Toolkit",
     icon: redux,
   },
@@ -179,13 +160,11 @@ const technologies: TTechnology[] = [
   {
     name: "docker",
     icon: docker,
->>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
   },
 ];
 
 const experiences: TExperience[] = [
   {
- 
     title: "Social Media Management",
     companyName: "IUK Staff Council",
     icon: iuk, // Placeholder
@@ -233,7 +212,9 @@ const experiences: TExperience[] = [
     points: [
       "Managed inventory control for the bar.",
       "Successfully sold many cases of beer before their expiration date, helping to organize goods as the theatre reopened after COVID.",
-=======
+    ],
+  },
+  {
     title: "React.js Developer",
     companyName: "Starbucks",
     icon: starbucks,
@@ -283,7 +264,6 @@ const experiences: TExperience[] = [
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
->>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
     ],
   },
 ];
@@ -296,12 +276,6 @@ const testimonials: TTestimonial[] = [
     name: "IUK Staff Council Member",
     designation: "",
     company: "IUK Staff Council",
-=======
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
->>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
     image: "https://randomuser.me/api/portraits/women/4.jpg",
   },
   {
@@ -311,12 +285,6 @@ const testimonials: TTestimonial[] = [
     name: "LHS Class President",
     designation: "",
     company: "LHS Class of 2009",
-=======
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
->>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
     image: "https://randomuser.me/api/portraits/men/5.jpg",
   },
   {
@@ -326,12 +294,6 @@ const testimonials: TTestimonial[] = [
     name: "Advising Team Lead",
     designation: "",
     company: "IUK Advising",
-=======
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
->>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
     image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
@@ -397,10 +359,7 @@ const projects: TProject[] = [
     image: tripguide, // Placeholder
     sourceCodeLink: "https://github.com/", // Placeholder
   },
-];
-
-export { services, technologies, experiences, testimonials, projects };
-=======
+  {
     name: "Car Rent",
     description:
       "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
@@ -466,4 +425,3 @@ export { services, technologies, experiences, testimonials, projects };
 ];
 
 export { services, technologies, experiences, testimonials, projects };
->>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41

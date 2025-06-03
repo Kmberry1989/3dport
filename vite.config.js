@@ -7,6 +7,3 @@ export default defineConfig({
  
   base: "/reactjs18-3d-portfolio/",
 });
-=======
-});
->>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
