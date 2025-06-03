@@ -19,13 +19,9 @@ const Hero = () => {
     </div>
  
          
-            <span className="text-[#008080]">{config.hero.name}</span>
-=======
-            Hi, I'm <span className="text-[#915EFF]">{config.hero.name}</span>
->>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">{config.hero.name}</span>
-          </h1>
+<h1 className={`${styles.heroHeadText} text-white`}>
+  Hi, I'm <span className="text-[#915EFF]">{config.hero.name}</span>
+</h1>
           <p className={`${styles.heroSubText} text-white-100 mt-2`}>
             {config.hero.p[0]} <br className="hidden sm:block" />
             {config.hero.p[1]}
