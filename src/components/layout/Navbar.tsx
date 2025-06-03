@@ -64,7 +64,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-<<<<<<< HEAD
+ 
           <img src={logo} alt="logo" className="h-28 w-28 object-contain" />
           <p className="flex cursor-pointer text-[24px] font-bold text-teal ">
 =======
@@ -80,7 +80,7 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`${
-<<<<<<< HEAD
+ 
                 active === nav.id ? "text-black" : "text-teal"
               } cursor-pointer text-[20px] font-medium hover:text-teal`}
 =======

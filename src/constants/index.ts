@@ -13,7 +13,7 @@ import {
   creator,
   web,
   javascript,
-<<<<<<< HEAD
+ 
   html,
   css,
   reactjs,
@@ -65,7 +65,7 @@ export const navLinks: TNavLink[] = [
 
 const services: TService[] = [
   {
-<<<<<<< HEAD
+ 
     title: "Digital Content Creation",
     icon: creator,
   },
@@ -114,7 +114,7 @@ const technologies: TTechnology[] = [
     icon: javascript,
   },
   {
-<<<<<<< HEAD
+ 
 =======
     name: "TypeScript",
     icon: typescript,
@@ -125,7 +125,7 @@ const technologies: TTechnology[] = [
     icon: reactjs,
   },
   {
-<<<<<<< HEAD
+ 
     name: "Adobe Express",
     icon: figma, // Placeholder icon
   },
@@ -185,7 +185,7 @@ const technologies: TTechnology[] = [
 
 const experiences: TExperience[] = [
   {
-<<<<<<< HEAD
+ 
     title: "Social Media Management",
     companyName: "IUK Staff Council",
     icon: iuk, // Placeholder
@@ -291,7 +291,7 @@ const experiences: TExperience[] = [
 const testimonials: TTestimonial[] = [
   {
     testimonial:
-<<<<<<< HEAD
+ 
       "Rochelle's work on our first virtual silent auction was outstanding. Her digital strategy and promotional graphics were key to us raising $822 for scholarships.",
     name: "IUK Staff Council Member",
     designation: "",
@@ -306,7 +306,7 @@ const testimonials: TTestimonial[] = [
   },
   {
     testimonial:
-<<<<<<< HEAD
+ 
       "We were so proud to be the very first event held at our new venue, and it wouldn't have been possible without Rochelle's organization. The reunion was a huge success!",
     name: "LHS Class President",
     designation: "",
@@ -321,7 +321,7 @@ const testimonials: TTestimonial[] = [
   },
   {
     testimonial:
-<<<<<<< HEAD
+ 
       "The promotional materials Rochelle created for our advising events were fantastic. Her work helped us successfully enroll 70-80 new students at each event.",
     name: "Advising Team Lead",
     designation: "",
@@ -338,7 +338,7 @@ const testimonials: TTestimonial[] = [
 
 const projects: TProject[] = [
   {
-<<<<<<< HEAD
+ 
     name: "IUKSC Silent Auction",
     description:
       "Designed and managed the online platform for the IUK Staff Council's silent auction, which raised $822 for staff scholarships and student support.  93, 94]",

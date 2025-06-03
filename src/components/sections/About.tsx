@@ -31,7 +31,7 @@ const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => (
           <img
             src={icon}
             alt="web-development"
-<<<<<<< HEAD
+ 
             className="h-256 w-256 object-contain"
 =======
             className="h-16 w-16 object-contain"

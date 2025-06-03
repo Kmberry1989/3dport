@@ -22,7 +22,7 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
 import meta from "./company/meta.png";
-<<<<<<< HEAD
+ 
 import lhs from "./company/lhs.png";
 import iuk from "./company/iuk.png";
 import theatre from "./company/theatre.png";
@@ -59,7 +59,7 @@ export {
   typescript,
   threejs,
   meta,
-<<<<<<< HEAD
+ 
   lhs,
   iuk,
 theatre,
