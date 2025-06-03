@@ -26,12 +26,10 @@ import meta from "./company/meta.png";
 import lhs from "./company/lhs.png";
 import iuk from "./company/iuk.png";
 import theatre from "./company/theatre.png";
-=======
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
->>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
@@ -62,12 +60,10 @@ export {
  
   lhs,
   iuk,
-theatre,
-=======
+  theatre,
   shopify,
   starbucks,
   tesla,
->>>>>>> 745b7734da4b170f4536a2866e42f34d5d021e41
   carrent,
   jobit,
   tripguide,

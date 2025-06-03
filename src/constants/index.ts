@@ -32,6 +32,9 @@ import {
   iuk,
   lhs,
   theatre,
+  shopify,
+  starbucks,
+  tesla,
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
