@@ -20,7 +20,7 @@ module.exports = {
         xs: "450px",
       },
       backgroundImage: {
-        "hero-pattern": "url('/herobg.png')", // <<< THIS IS THE CRUCIAL CHANGE
+        'hero-pattern': "url('https://i.imgur.com/xpxTlTA.png')", // The URL you provided
       },
     },
   },
