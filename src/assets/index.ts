@@ -21,7 +21,6 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
-import meta from "./company/meta.png";
  
 import lhs from "./company/lhs.png";
 import iuk from "./company/iuk.png";
