@@ -40,7 +40,7 @@ type TConfig = {
 
 export const config: TConfig = {
   html: {
-    title: "Rochelle Berry — Portfolio",
+    title: "",
     fullName: "Rochelle Berry",
     email: "rochelleberry731@gmail.com",
   },
@@ -49,7 +49,7 @@ export const config: TConfig = {
     p: ["Creative Strategist", "& Digital Storyteller"],
   },
   contact: {
-    p: "Get in touch",
+    p: "Connect & Inspire",
     h2: "Contact.",
     form: {
       name: {
@@ -70,12 +70,12 @@ export const config: TConfig = {
       content: `A dynamic and creative professional with a passion for fostering innovative experiences. I specialize in bringing ideas to life through compelling visual and digital strategies, connecting communities, and building lasting partnerships.`,
     },
     experience: {
-      p: "What I have done so far",
+      p: "Highlights",
       h2: "Work Experience.",
     },
     feedbacks: {
       p: "My job",
-      h2: "Creating Engaging Digital Experiences That Connect & Inspire.",
+      h2: "Creating Engaging Digital Experiences.",
     },
     works: {
       p: "My work",

@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
 
 import { styles } from "../../constants/styles";
-import { ComputersCanvas } from "../canvas";
 import { config } from "../../constants/config";
 
 const Hero = () => {
   return (
     <section className={`relative mx-auto h-screen w-full`}>
       <div
-        className={`absolute inset-0 top-[120px] mx-auto max-w-7xl ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`absolute inset-0 top-[112px] mx-auto max-w-7xl ${styles.paddingX} flex flex-row items-start gap-5`}
       >
         <div className="mt-5 flex flex-col items-center justify-center">
           <div className="h-5 w-5 rounded-full bg-[#915EFF]" />
@@ -17,7 +16,8 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">{config.hero.name}</span>
+         
+            <span className="text-[#008080]">{config.hero.name}</span>
           </h1>
           <p className={`${styles.heroSubText} text-white-100 mt-2`}>
             {config.hero.p[0]} <br className="hidden sm:block" />
@@ -25,8 +25,6 @@ const Hero = () => {
           </p>
         </div>
       </div>
-
-      <ComputersCanvas />
 
       <div className="xs:bottom-10 absolute bottom-32 flex w-full items-center justify-center">
         <a href="#about">
