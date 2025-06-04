@@ -1,34 +1,82 @@
-import { useState, useRef, Suspense } from "react";
+import { useRef, Suspense, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Points, PointMaterial, Preload } from "@react-three/drei";
-import { random } from "maath";
-import { TypedArray } from "three";
+import { Preload, Sparkles } from "@react-three/drei";
 import * as THREE from "three";
 
-const Stars = (props: any) => {
-  const ref = useRef<THREE.Points>();
-  const [sphere] = useState<TypedArray>(() =>
-    random.inSphere(new Float32Array(5001), { radius: 1.2 })
-  );
+const ShootingStar = () => {
+  const ref = useRef<THREE.Mesh>(null!);
+  const [active, setActive] = useState(false);
 
-  useFrame((_state, delta) => {
-    if (ref.current) {
-      ref.current.rotation.x -= delta / 10;
-      ref.current.rotation.y -= delta / 15;
+  const timer = useRef(0);
+  const delay = useRef(Math.random() * 6 + 4);
+  const life = useRef(0);
+  const direction = useRef(new THREE.Vector3());
+  const speed = 3;
+  const lifetime = 1.5;
+
+  useFrame((_, delta) => {
+    if (active) {
+      life.current += delta;
+      if (ref.current) {
+        ref.current.position.addScaledVector(direction.current, delta * speed);
+      }
+
+      if (life.current > lifetime) {
+        setActive(false);
+        timer.current = 0;
+        delay.current = Math.random() * 6 + 4;
+        life.current = 0;
+      }
+    } else {
+      timer.current += delta;
+      if (timer.current > delay.current) {
+        if (ref.current) {
+          ref.current.position.set(
+            Math.random() * 4 - 2,
+            Math.random() * 2 - 1,
+            -1
+          );
+        }
+        direction.current
+          .set(
+            Math.random() * 0.5 - 0.25,
+            Math.random() * 0.2 - 0.1,
+            -1
+          )
+          .normalize();
+        setActive(true);
+      }
     }
   });
 
   return (
-    <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
-        <PointMaterial
-          transparent
-          color="#f272c8"
-          size={0.002}
-          sizeAttenuation={true}
-          depthWrite={false}
-        />
-      </Points>
+    <mesh ref={ref} visible={active}>
+      <sphereGeometry args={[0.01, 8, 8]} />
+      <meshBasicMaterial color="white" />
+    </mesh>
+  );
+};
+
+const Stars = () => {
+  const group = useRef<THREE.Group>(null!);
+
+  useFrame((_, delta) => {
+    if (group.current) {
+      group.current.rotation.x -= delta / 10;
+      group.current.rotation.y -= delta / 15;
+    }
+  });
+
+  return (
+    <group ref={group} rotation={[0, 0, Math.PI / 4]}>
+      <Sparkles
+        count={800}
+        size={1.5}
+        scale={6}
+        color="#ffffff"
+        speed={0.2}
+      />
+      <ShootingStar />
     </group>
   );
 };
