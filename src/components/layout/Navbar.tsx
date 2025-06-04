@@ -53,7 +53,7 @@ const Navbar = () => {
       className={`
         ${styles.paddingX}
         fixed top-0 z-20 flex w-full items-center py-5
-        bg-transparent
+        ${scrolled ? "bg-[#00343c]/80 backdrop-blur" : "bg-transparent"}
       `}
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
