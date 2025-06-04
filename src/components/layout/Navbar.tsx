@@ -74,7 +74,7 @@ const Navbar = () => {
               key={nav.id}
               className={`
                 cursor-pointer text-[20px] font-medium transition-colors
-                ${active === nav.id ? "text-teal-light" : "text-teal-mid"}
+                ${active === nav.id ? "text-teal-light" : "text-white"}
                 hover:text-teal-dark
               `}
               onClick={() => setActive(nav.id)}
