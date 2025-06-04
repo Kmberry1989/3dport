@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 
 import { styles } from "../../constants/styles";
 import { navLinks } from "../../constants";
-import { logo, menu, close } from "../../assets";
+import { logo } from "../../assets";
 import { config } from "../../constants/config";
 
 const Navbar = () => {
   const [active, setActive] = useState<string | null>();
-  const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -65,54 +64,25 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt="logo" className="h-28 w-28 object-contain" />
-          <p className="flex cursor-pointer text-[24px] font-bold text-teal ">
+          <p className="flex cursor-pointer text-[24px] font-bold text-teal-mid">
             {config.html.title}
           </p>
         </Link>
-
-        <ul className="hidden list-none flex-row gap-10 sm:flex">
+        <ul className="flex list-none flex-row gap-10 w-full justify-end">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
-              className={`${
-                active === nav.id ? "text-turqoise" : "text-teal"
-              } cursor-pointer text-[20px] font-medium hover:text-teal`}
+              className={`
+                cursor-pointer text-[20px] font-medium transition-colors
+                ${active === nav.id ? "text-teal-light" : "text-teal-mid"}
+                hover:text-teal-dark
+              `}
+              onClick={() => setActive(nav.id)}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
         </ul>
-
-        <div className="flex flex-1 items-center justify-end sm:hidden">
-          <img
-            src={toggle ? close : menu}
-            alt="menu"
-            className="h-[28px] w-[28px] object-contain"
-            onClick={() => setToggle(!toggle)}
-          />
-
-          <div
-            className={`${
-              !toggle ? "hidden" : "flex"
-            } black-gradient absolute right-0 top-20 z-10 mx-4 my-2 min-w-[140px] rounded-xl p-6`}
-          >
-            <ul className="flex flex-1 list-none flex-col items-start justify-end gap-4">
-              {navLinks.map((nav) => (
-                <li
-                  key={nav.id}
-                  className={`font-poppins cursor-pointer text-[16px] font-medium ${
-                    active === nav.id ? "text-white" : "text-secondary"
-                  }`}
-                  onClick={() => {
-                    setToggle(!toggle);
-                  }}
-                >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
       </div>
     </nav>
   );
