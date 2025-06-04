@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+/* The following lines require Tailwind CSS processing. 
+   If you see "Unknown at rule @tailwind", make sure to process this file with Tailwind CLI or PostCSS with the Tailwind plugin. */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+```
 
 :root {
   --teal-dark: #008080;
@@ -80,6 +83,7 @@ body, .bg-primary {
     #f12711,
     #f5af19
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-clip: text;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -222,5 +226,46 @@ body, .bg-primary {
       0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
       -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
+  }
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 640px) {
+  body, .bg-primary {
+    background-color: var(--teal-dark) !important;
+    color: white;
+    font-size: 15px;
+  }
+  .padding, .paddingX, .paddingY {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  .max-w-7xl {
+    max-width: 100vw !important;
+  }
+  .heroHeadText {
+    font-size: 2rem !important;
+    line-height: 2.5rem !important;
+  }
+  .heroSubText {
+    font-size: 1.1rem !important;
+    line-height: 1.5rem !important;
+  }
+  .sectionHeadText {
+    font-size: 1.7rem !important;
+    line-height: 2.2rem !important;
+  }
+  .sectionSubText {
+    font-size: 1rem !important;
+  }
+  .flex-row, .flex {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  .h-screen {
+    min-height: 100vh !important;
+    height: auto !important;
   }
 }
