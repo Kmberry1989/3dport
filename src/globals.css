@@ -143,6 +143,51 @@ body, .bg-primary {
   -webkit-text-fill-color: transparent;
 }
 
+.teal-gradient {
+  background: linear-gradient(135deg, #008080 0%, #40E0D0 50%, #00A99D 100%) !important;
+}
+
+.framed-gradient {
+  background: linear-gradient(135deg, #008080 0%, #40E0D0 50%, #00A99D 100%) padding-box, linear-gradient(135deg, #804dee 0%, #40E0D0 100%) border-box;
+  border: 3px solid transparent;
+  border-radius: 24px;
+}
+
+/* Animate balls rolling in from random sides */
+.rolling-ball {
+  opacity: 0;
+  transform: translateX(-100vw) rotate(-180deg);
+  animation: roll-in 1.2s cubic-bezier(0.6, 0.2, 0.2, 1) forwards;
+}
+
+@keyframes roll-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100vw) rotate(-180deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(30px) rotate(20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+/* Make PNG images in cards larger */
+.bg-tertiary img, .bg-\[\#151030\] img, .card-img_hover img {
+  max-width: 90px !important;
+  max-height: 90px !important;
+  width: 90px !important;
+  height: 90px !important;
+}
+
+/* Header gradient when opaque */
+.bg-primary {
+  background: linear-gradient(135deg, #008080 0%, #40E0D0 50%, #00A99D 100%) !important;
+}
+
 /* canvas- styles */
 .canvas-loader {
   font-size: 10px;
