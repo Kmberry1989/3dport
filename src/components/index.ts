@@ -2,7 +2,6 @@
 import {
   EarthCanvas,
   BallCanvas,
-  ComputersCanvas,
   StarsCanvas,
 } from "./canvas";
 import Hero from "./sections/Hero";
@@ -27,6 +26,5 @@ export {
   CanvasLoader,
   EarthCanvas,
   BallCanvas,
-  ComputersCanvas,
   StarsCanvas,
 };
