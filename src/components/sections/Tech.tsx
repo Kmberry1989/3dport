@@ -8,7 +8,7 @@ const Tech = () => {
   return (
     <>
       <div className="flex flex-row flex-wrap justify-center gap-10">
-        {visibleTechnologies.map((technology, idx) => (
+        {visibleTechnologies.map((technology) => (
           <div
             className="h-36 w-36 rounded-[24px] bg-[#151030] flex items-center justify-center"
             key={technology.name}
