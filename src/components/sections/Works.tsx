@@ -14,7 +14,6 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
   description,
   tags,
   image,
-  sourceCodeLink,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
