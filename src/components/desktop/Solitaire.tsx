@@ -5,9 +5,12 @@ import {
   solitairePoint,
   solitaireBuild,
   solitaireDeal,
+  solitaireToString,
   solitaireIsWon,
 } from "klondike-solitaire";
 import type { Card } from "klondike-solitaire/dist/src/card/card";
+import { rankToASCII } from "klondike-solitaire/dist/src/card/rank";
+import { suitToASCII, suitToColor } from "klondike-solitaire/dist/src/card/suit";
 
 const Solitaire = () => {
   const [game, setGame] = useState(() => Game());
@@ -38,71 +41,70 @@ const Solitaire = () => {
     update();
   };
 
-  const suit = (s: string) =>
-    s === "Spades" ? "♠" : s === "Clubs" ? "♣" : s === "Hearts" ? "♥" : "♦";
-
-  const CardView = ({ card }: { card: Card }) => (
-    <div
-      className={`w-8 h-12 rounded border border-gray-600 flex items-center justify-center text-sm font-bold bg-white ${
-        card.suit === "Hearts" || card.suit === "Diamonds" ? "text-red-600" : "text-black"
-      }`}
-    >
-      {card.rank}
-      {suit(card.suit)}
-    </div>
-  );
+  const renderCard = (c: Card) => {
+    if (c.direction === "Down") {
+      return <div className="w-12 h-16 bg-blue-800 rounded border" />;
+    }
+    const rank = rankToASCII[c.rank];
+    const suit = suitToASCII[c.suit];
+    const color = suitToColor[c.suit] === "Red" ? "text-red-600" : "text-black";
+    return (
+      <div className={`w-12 h-16 bg-white rounded border flex flex-col justify-between p-1 ${color}`}>
+        <span className="text-xs">{rank}{suit}</span>
+        <span className="text-lg self-center">{suit}</span>
+        <span className="text-xs self-end rotate-180">{rank}{suit}</span>
+      </div>
+    );
+  };
 
   const renderPile = (pile: readonly Card[], handler?: (c: Card) => void) => (
-    <div className="flex space-x-1">
+    <div className="flex">
       {pile.map((c, i) => (
-        <button key={i} onClick={() => handler?.(c)}>
-          {c.direction === "Down" ? (
-            <div className="w-8 h-12 rounded border border-gray-600 bg-blue-700" />
-          ) : (
-            <CardView card={c} />
-          )}
+        <button key={i} onClick={() => handler?.(c)} className="mx-0.5">
+          {renderCard(c)}
         </button>
       ))}
     </div>
   );
 
   return (
-    <div className="space-y-2 bg-green-800 p-2 text-xs text-white font-sans">
-      <div className="flex justify-between">
-        <div className="space-y-1">
-          <div className="text-center">Stock</div>
+    <div className="text-base font-mono space-y-2">
+      <div className="flex space-x-2">
+        <div>
+          <div>Stock</div>
           {renderPile(game.stock, onCard)}
-          <button onClick={deal} className="mt-1 rounded border px-1 text-black">Deal</button>
+          <button onClick={deal}>Deal</button>
         </div>
-        <div className="space-y-1">
-          <div className="text-center">Waste</div>
+        <div>
+          <div>Waste</div>
           {renderPile(game.waste, onCard)}
         </div>
-        <div className="flex space-x-2">
+        <div>
+          <div>Foundation</div>
           {game.foundation.map((pile, i) => (
-            <div key={i} className="space-y-1">
-              <div className="text-center">Foundation {i + 1}</div>
+            <div key={i}>
               {renderPile(pile, onCard)}
-              <button onClick={onBuildFoundation} className="rounded border px-1 text-black">Build</button>
+              <button onClick={onBuildFoundation}>Build</button>
             </div>
           ))}
         </div>
       </div>
-      <div className="space-y-1">
-        <div className="text-center">Tableau</div>
+      <div>
+        <div>Tableau</div>
         <div className="flex space-x-2">
           {game.tableau.map((lane, i) => (
-            <div key={i} className="space-y-1">
+            <div key={i}>
               {renderPile(lane, onCard)}
-              <button onClick={() => onBuildTableau(i)} className="rounded border px-1 text-black">Build</button>
+              <button onClick={() => onBuildTableau(i)}>Build</button>
             </div>
           ))}
         </div>
       </div>
-      <div className="space-x-2">
-        <button onClick={reset} className="rounded border bg-gray-300 px-1 text-black">Reset</button>
-        {solitaireIsWon(game) && <span className="font-bold">You won!</span>}
+      <div className="mt-2 space-x-2">
+        <button onClick={reset}>Reset</button>
+        {solitaireIsWon(game) && <span>You won!</span>}
       </div>
+      <pre className="whitespace-pre-wrap">{solitaireToString(game)}</pre>
     </div>
   );
 };
