@@ -64,7 +64,7 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt="logo" className="h-28 w-28 object-contain" />
-          <p className="flex cursor-pointer text-[24px] font-bold text-teal-mid">
+          <p className="flex cursor-pointer text-[24px] font-bold text-teal-mid text-shadow drop-shadow-lg">
             {config.html.title}
           </p>
         </Link>
@@ -73,17 +73,18 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`
-                cursor-pointer text-[20px] font-medium transition-colors
+                cursor-pointer text-[20px] font-medium transition-colors text-shadow
                 ${active === nav.id ? "text-teal-light" : "text-white"}
                 hover:text-teal-dark
+                drop-shadow-lg
               `}
               onClick={() => setActive(nav.id)}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <a href={`#${nav.id}`} className="text-shadow drop-shadow-lg">{nav.title}</a>
             </li>
           ))}
-          <li className="cursor-pointer text-[20px] font-medium text-white hover:text-teal-dark">
-            <Link to="/desktop">Desktop</Link>
+          <li className="cursor-pointer text-[20px] font-medium text-white hover:text-teal-dark text-shadow drop-shadow-lg">
+            <Link to="/desktop" className="text-shadow drop-shadow-lg">Desktop</Link>
           </li>
         </ul>
       </div>
