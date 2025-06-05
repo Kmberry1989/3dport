@@ -28,8 +28,8 @@ const Desktop = () => {
     setOpen((o) => ({ ...o, [key]: !o[key] }));
 
   return (
-    <div className="relative h-screen w-screen bg-blue-900 text-white select-none">
-      <div className="p-4 space-x-4">
+    <div className="relative flex h-screen w-screen flex-col bg-blue-900 text-white select-none">
+      <div className="grid flex-grow grid-cols-4 gap-4 p-4 overflow-y-auto">
         <button onClick={() => toggle("minesweeper")}>Minesweeper</button>
         <button onClick={() => toggle("solitaire")}>Solitaire</button>
         <button onClick={() => toggle("documents")}>My Documents</button>
