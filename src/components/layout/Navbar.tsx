@@ -82,6 +82,9 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
+          <li className="cursor-pointer text-[20px] font-medium text-white hover:text-teal-dark">
+            <Link to="/desktop">Desktop</Link>
+          </li>
         </ul>
       </div>
     </nav>
