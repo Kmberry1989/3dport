@@ -9,7 +9,7 @@ interface Props {
 
 type State = "normal" | "minimized" | "maximized";
 
-const Window = ({ title, onClose, children }: Props) => {
+export const Window = ({ title, onClose, children }: Props) => {
   const [state, setState] = useState<State>("normal");
 
   if (state === "minimized") {
