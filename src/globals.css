@@ -249,6 +249,11 @@ body, .bg-primary {
   text-shadow: 0 4px 24px #915EFF, 0 1.5px 2px rgba(0,0,0,0.25);
 }
 
+/* Remove drop-shadow-hero when parent is transparent (header container) */
+.bg-transparent .drop-shadow-hero {
+  text-shadow: none !important;
+}
+
 /* Improve focus ring for accessibility */
 :focus {
   outline: 2px solid #40E0D0;

@@ -29,8 +29,12 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white drop-shadow-hero`}>
-           {" "}
-            <span className="text-[#915EFF] drop-shadow-hero">{config.hero.name}</span>
+            <span
+              className="text-[#915EFF] drop-shadow-hero"
+              style={{ WebkitTextStroke: '2px black' }}
+            >
+              {config.hero.name}
+            </span>
           </h1>
           <p className={`${styles.heroSubText} text-white-100 mt-2 text-shadow drop-shadow-hero`}>
             {config.hero.p[0]} <br className="hidden sm:block" />
