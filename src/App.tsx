@@ -9,7 +9,6 @@ import {
   Navbar,
   Tech,
   Works,
-  StarsCanvas,
   Desktop,
 } from "./components";
 import { useEffect } from "react";
@@ -29,7 +28,6 @@ const App = () => {
           path="/"
           element={
             <div className="bg-primary relative z-0">
-              <StarsCanvas />
               <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
                 <Navbar />
                 <Hero />

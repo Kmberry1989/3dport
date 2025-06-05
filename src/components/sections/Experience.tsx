@@ -20,7 +20,6 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
         color: "#fff",
       }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-      date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={
         <div className="flex h-full w-full items-center justify-center">
@@ -40,6 +39,7 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
         >
           {experience.companyName}
         </p>
+        <p className="text-white-100 text-[14px]">{experience.date}</p>
       </div>
 
       <ul className="ml-5 mt-5 list-disc space-y-2">
