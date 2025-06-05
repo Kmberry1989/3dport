@@ -32,7 +32,7 @@ const Hero = () => {
            {" "}
             <span className="text-[#915EFF]">{config.hero.name}</span>
           </h1>
-          <p className={`${styles.heroSubText} text-white-100 mt-2`}>
+          <p className={`${styles.heroSubText} text-white-100 mt-2 text-shadow`}>
             {config.hero.p[0]} <br className="hidden sm:block" />
             {config.hero.p[1]}
           </p>

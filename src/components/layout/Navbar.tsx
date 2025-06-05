@@ -73,17 +73,17 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`
-                cursor-pointer text-[20px] font-medium transition-colors
+                cursor-pointer text-[20px] font-medium transition-colors text-shadow
                 ${active === nav.id ? "text-teal-light" : "text-white"}
                 hover:text-teal-dark
               `}
               onClick={() => setActive(nav.id)}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <a href={`#${nav.id}`} className="text-shadow">{nav.title}</a>
             </li>
           ))}
-          <li className="cursor-pointer text-[20px] font-medium text-white hover:text-teal-dark">
-            <Link to="/desktop">Desktop</Link>
+          <li className="cursor-pointer text-[20px] font-medium text-white hover:text-teal-dark text-shadow">
+            <Link to="/desktop" className="text-shadow">Desktop</Link>
           </li>
         </ul>
       </div>

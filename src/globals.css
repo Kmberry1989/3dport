@@ -239,3 +239,7 @@ body, .bg-primary {
         -1.8em -1.8em 0 0em #ffffff;
     }
   }
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
