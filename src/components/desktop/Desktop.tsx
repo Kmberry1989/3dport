@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Window } from "./Window";
+import Window from "./Window";
 import Minesweeper from "./Minesweeper";
 import Solitaire from "./Solitaire";
 import Documents from "./Documents";
