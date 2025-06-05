@@ -239,3 +239,34 @@ body, .bg-primary {
         -1.8em -1.8em 0 0em #ffffff;
     }
   }
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Add a more prominent drop shadow utility for hero/headers */
+.drop-shadow-hero {
+  text-shadow: 0 4px 24px #915EFF, 0 1.5px 2px rgba(0,0,0,0.25);
+}
+
+/* Remove drop-shadow-hero when parent is transparent (header container) */
+.bg-transparent .drop-shadow-hero {
+  text-shadow: none !important;
+}
+
+/* Improve focus ring for accessibility */
+:focus {
+  outline: 2px solid #40E0D0;
+  outline-offset: 2px;
+}
+
+/* Smoother transitions for interactive elements */
+button, a, .card, .shadow-card, .shadow-2xl {
+  transition: box-shadow 0.3s cubic-bezier(.4,0,.2,1), transform 0.2s cubic-bezier(.4,0,.2,1), background 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+/* Subtle hover effect for cards */
+.card:hover, .shadow-card:hover, .shadow-2xl:hover {
+  box-shadow: 0 8px 32px 0 #915EFF55, 0 1.5px 2px rgba(0,0,0,0.18);
+  transform: translateY(-4px) scale(1.03);
+}
