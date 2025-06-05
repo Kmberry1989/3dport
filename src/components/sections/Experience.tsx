@@ -27,7 +27,7 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
           <img
             src={experience.icon}
             alt={experience.companyName}
-            className="h-[60%] w-[60%] object-contain"
+            className="h-full w-full object-contain p-2" // Fill the circle, add padding
           />
         </div>
       }
