@@ -40,27 +40,52 @@ const Desktop = () => {
         </Link>
       </div>
       {open.minesweeper && (
-        <Window title="Minesweeper" onClose={() => toggle("minesweeper")}> 
+        <Window
+          title="Minesweeper"
+          onClose={() => toggle("minesweeper")}
+          width="20rem"
+          height="20rem"
+        >
           <Minesweeper />
         </Window>
       )}
       {open.solitaire && (
-        <Window title="Solitaire" onClose={() => toggle("solitaire")}> 
+        <Window
+          title="Solitaire"
+          onClose={() => toggle("solitaire")}
+          width="40rem"
+          height="32rem"
+        >
           <Solitaire />
         </Window>
       )}
       {open.documents && (
-        <Window title="My Documents" onClose={() => toggle("documents")}> 
+        <Window
+          title="My Documents"
+          onClose={() => toggle("documents")}
+          width="20rem"
+          height="16rem"
+        >
           <Documents />
         </Window>
       )}
       {open.pictures && (
-        <Window title="My Pictures" onClose={() => toggle("pictures")}> 
+        <Window
+          title="My Pictures"
+          onClose={() => toggle("pictures")}
+          width="24rem"
+          height="20rem"
+        >
           <Pictures />
         </Window>
       )}
       {open.browser && (
-        <Window title="Browser" onClose={() => toggle("browser")}> 
+        <Window
+          title="Browser"
+          onClose={() => toggle("browser")}
+          width="28rem"
+          height="30rem"
+        >
           <WebBrowser />
         </Window>
       )}
