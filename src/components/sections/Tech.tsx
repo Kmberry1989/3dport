@@ -1,12 +1,14 @@
 import { BallCanvas } from "../canvas";
 import { SectionWrapper } from "../../hoc";
 import { technologies } from "../../constants";
+import { Header } from "../atoms/Header";
 
 const Tech = () => {
   // Only show the first 8 technologies
   const visibleTechnologies = technologies.slice(0, 8);
   return (
     <>
+      <Header useMotion={true} p="" h2="Technology Experience" />
       <div className="flex flex-row flex-wrap justify-center gap-10">
         {visibleTechnologies.map((technology) => (
           <div
