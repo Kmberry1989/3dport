@@ -5,9 +5,10 @@
   If you see "Unknown at rule @tailwind", make sure to process this file with Tailwind CLI or PostCSS with the Tailwind plugin.
   Remove these lines if you are not using Tailwind CSS.
 */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Remove these lines if not using Tailwind CSS, or process this file with Tailwind CLI/PostCSS if you are using Tailwind */
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
 
 :root {
   --teal-dark: #000000; /* Changed from #008080 to black */
@@ -43,7 +44,7 @@ body, .bg-primary {
 /* Utility classes for text effects */
 .text-stroke {
   -webkit-text-stroke: 1px #000000;
-  text-stroke: 1px #000000;
+  text-shadow: 1px #000000;
 }
 
 .header-shadow {
@@ -98,6 +99,8 @@ body, .bg-primary {
     #f12711,
     #f5af19
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-clip: text;
+  background-clip: text;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
