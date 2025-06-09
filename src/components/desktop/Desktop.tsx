@@ -1,8 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import Window from "./Window";
-import staticLoginImg from "../../assets/mockups/desktop/desktop-userlogin.png";
-import wallpaper from "../../assets/03ED5E95-57FC-40F6-A98B-D600807C04C8.png";
-import userIcon from "../../assets/mockups/desktop/desktop-userlogin.png";
+import staticLoginImg from "../../assets/mockups/desktop/desktop-userlogin.jpg";
+import wallpaper from "../../assets/mockups/desktop/desktop-wallpaper.jpg";
+import userIcon from "../../assets/mockups/desktop/desktop-userlogin.jpg";
 import DesktopIcon from "./DesktopIcon";
 import iconCalculator from "../../assets/mockups/desktop icons/icon-calculator.PNG?url";
 import iconContacts from "../../assets/mockups/desktop icons/icon-contacts.PNG?url";

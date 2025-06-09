@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SoundProvider } from "./components/SoundManager";
 import Mascot from "./components/Mascot";
 import { useState, useEffect } from "react";
-import mascotSplash from "./assets/03ED5E95-57FC-40F6-A98B-D600807C04C8.png"; // update path if needed
+import mascotSplash from "./assets/rochellecartoon.PNG"; // update path if needed
 
 import {
   About,
@@ -55,7 +55,11 @@ const App = () => {
                 path="/"
                 element={
                   <div className="bg-primary relative z-0">
-                    <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
+                    <div
+                      className="absolute inset-0 -z-10 cursor-pointer select-none"
+                      style={{ background: `url('/herobg.png') center/cover no-repeat` }}
+                    />
+                    <div className="relative z-0">
                       <Navbar />
                       <Mascot />
                       <Hero />
