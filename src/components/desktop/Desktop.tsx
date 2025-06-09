@@ -142,18 +142,18 @@ const Desktop = () => {
   return (
     <div
       className="relative h-screen w-screen text-white select-none"
-      style={{ backgroundImage: `url(${wallpaper})`, backgroundSize: "cover", backgroundPosition: "center", transform: "scale(0.9)", transformOrigin: "center center" }}
+      style={{ backgroundImage: `url(${wallpaper})`, backgroundSize: "cover", backgroundPosition: "center", transform: "scale(1)", transformOrigin: "center center" }}
     >
       {/* Desktop icons grid */}
       <div
-        className={`absolute left-0 top-0 p-0 flex z-10 w-full h-full ${isMobile ? "flex-row overflow-x-auto" : "gap-12"}`}
-        style={{height: '100%', width: '100%', maxWidth: '100vw', maxHeight: '100vh', overflow: isMobile ? 'auto' : 'auto'}}
+        className={`absolute left-0 top-0 flex z-10 w-full h-full ${isMobile ? "flex-row overflow-x-auto" : "gap-12"}`}
+        style={{height: '100%', width: '100%', maxWidth: '100vw', maxHeight: '100vh', overflow: isMobile ? 'auto' : 'auto', padding: isMobile ? '24px 12px' : '48px 32px'}}
         onClick={(e) => {
           if (e.target === e.currentTarget) window.location.href = "/";
         }}
       >
         {columns.map((col, colIdx) => (
-          <div key={colIdx} className="flex flex-col gap-8 items-center">
+          <div key={colIdx} className="flex flex-col gap-12 items-center" style={{marginLeft:colIdx===0?16:0,marginRight:colIdx===columns.length-1?16:0}}>
             {col.map((iconObj) => (
               <DesktopIcon
                 key={iconObj.key}
