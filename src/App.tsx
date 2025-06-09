@@ -81,17 +81,25 @@ const App = () => {
               <Route
                 path="/"
                 element={
-                  <div className="bg-primary relative z-0">
+                  <div className="bg-solid-black relative z-0">
                     <div
                       className="absolute inset-0 -z-10 cursor-pointer select-none"
                       style={{ background: `url('/herobg.png') center/cover no-repeat` }}
                     />
+                    {/* Sticky Navbar always on top */}
+                    <div className="sticky top-0 z-50 w-full backdrop-blur-md bg-black/40">
+                      <Navbar />
+                    </div>
+                    {/* Content with blur when under header */}
                     <div
                       className="relative z-0"
                       ref={contentRef}
-                      style={{ opacity: contentOpacity, transition: "opacity 0.3s" }}
+                      style={{
+                        opacity: contentOpacity,
+                        transition: 'opacity 0.3s',
+                        filter: contentOpacity < 1 ? `blur(${(1 - contentOpacity) * 12}px)` : 'none',
+                      }}
                     >
-                      <Navbar />
                       {/* <Mascot /> */}
                       <Hero />
                       <About />

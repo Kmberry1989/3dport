@@ -66,7 +66,7 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt="logo" className="h-28 w-28 object-contain" />
-          <p className="flex cursor-pointer text-[24px] font-bold text-teal-mid">
+          <p className="flex cursor-pointer text-[24px] font-bold text-teal-mid header-shadow">
             {config.html.title}
           </p>
         </Link>
@@ -75,7 +75,7 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`
-                cursor-pointer text-[20px] font-medium transition-colors
+                cursor-pointer text-[20px] font-medium transition-colors header-shadow
                 ${active === nav.id ? "text-teal-light" : "text-white"}
                 hover:text-teal-dark
               `}
@@ -87,7 +87,7 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
-          <li className="cursor-pointer text-[20px] font-medium text-white hover:text-teal-dark">
+          <li className="cursor-pointer text-[20px] font-medium text-white hover:text-teal-dark header-shadow">
             <Link to="/desktop">Desktop</Link>
           </li>
         </ul>

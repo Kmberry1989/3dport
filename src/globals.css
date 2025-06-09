@@ -46,7 +46,11 @@ body, .bg-primary {
 }
 
 .header-shadow {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7), 0 1px 0 #222;
+}
+
+.bg-solid-black {
+  background: #000 !important;
 }
 
 .hash-span {
