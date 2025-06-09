@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SoundProvider } from "./components/SoundManager";
 import { useEffect, useRef, useState } from "react";
