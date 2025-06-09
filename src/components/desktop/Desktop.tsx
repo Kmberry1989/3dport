@@ -1,8 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import Window from "./Window";
-import Mascot from "../Mascot";
 import staticLoginImg from "../../assets/mockups/desktop/desktop-userlogin.png";
-import wallpaper from "../../assets/desk-bg-notes.png";
+import newWallpaper from "../../assets/your_uploaded_wallpaper.png"; // Update with the correct filename
 import userIcon from "../../assets/mockups/desktop/desktop-userlogin.png";
 import DesktopIcon from "./DesktopIcon";
 import iconCalculator from "../../assets/mockups/desktop icons/icon-calculator.PNG?url";
@@ -163,9 +162,8 @@ const Desktop = () => {
   return (
     <div
       className="relative h-screen w-screen text-white select-none"
-      style={{ backgroundImage: `url(${wallpaper})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      style={{ backgroundImage: `url(${newWallpaper})`, backgroundSize: "cover", backgroundPosition: "center" }}
     >
-      <Mascot />
       {/* Desktop icons grid */}
       <div
         className={`absolute left-0 top-0 p-0 flex z-10 w-full h-full ${isMobile ? "flex-row overflow-x-auto" : "gap-12"}`}
