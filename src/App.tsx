@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SoundProvider } from "./components/SoundManager";
 import Mascot from "./components/Mascot";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import mascotSplash from "./assets/rochellecartoon.PNG"; // update path if needed
 
 import {
@@ -19,6 +19,9 @@ import { config } from "./constants/config";
 
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
+  const [contentOpacity, setContentOpacity] = useState(1);
+  const contentRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const timer = setTimeout(() => setShowSplash(false), 1500);
     return () => clearTimeout(timer);
@@ -28,6 +31,28 @@ const App = () => {
     if (document.title !== config.html.title) {
       document.title = config.html.title;
     }
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!contentRef.current) return;
+      const rect = contentRef.current.getBoundingClientRect();
+      // Fade out as the bottom of content approaches the header (assume header is 80px)
+      const windowHeight = window.innerHeight;
+      const headerHeight = 80;
+      const fadeStart = windowHeight - headerHeight * 2;
+      const fadeEnd = windowHeight - headerHeight;
+      const bottom = rect.bottom;
+      if (bottom < fadeEnd) {
+        setContentOpacity(0);
+      } else if (bottom < fadeStart) {
+        setContentOpacity((bottom - fadeEnd) / (fadeStart - fadeEnd));
+      } else {
+        setContentOpacity(1);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -59,18 +84,22 @@ const App = () => {
                       className="absolute inset-0 -z-10 cursor-pointer select-none"
                       style={{ background: `url('/herobg.png') center/cover no-repeat` }}
                     />
-                    <div className="relative z-0">
+                    <div
+                      className="relative z-0"
+                      ref={contentRef}
+                      style={{ opacity: contentOpacity, transition: "opacity 0.3s" }}
+                    >
                       <Navbar />
                       <Mascot />
                       <Hero />
-                    </div>
-                    <About />
-                    <Experience />
-                    <Tech />
-                    <Works />
-                    <Feedbacks />
-                    <div className="relative z-0">
-                      <Contact />
+                      <About />
+                      <Experience />
+                      <Tech />
+                      <Works />
+                      <Feedbacks />
+                      <div className="relative z-0">
+                        <Contact />
+                      </div>
                     </div>
                   </div>
                 }

@@ -6,6 +6,9 @@ const sounds = {
   close: "/close.mp3",
   error: "/error.mp3",
   success: "/success.mp3",
+  typing: "/typing.mp3",
+  mouse: "/mouse.mp3",
+  startup: "/startup.mp3",
   // Add more as needed
 };
 
