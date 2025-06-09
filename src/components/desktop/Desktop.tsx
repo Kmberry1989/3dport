@@ -159,7 +159,7 @@ const Desktop = () => {
                 key={iconObj.key}
                 icon={iconObj.icon}
                 label={iconObj.label}
-                onDoubleClick={() => {
+                 onClick={() => {
                   setOpen(o => ({ ...o, [iconObj.key]: true }));
                   bringToFront(iconObj.key);
                 }}

@@ -3,16 +3,16 @@ import React from "react";
 interface DesktopIconProps {
   icon: string;
   label: string;
-  onDoubleClick: () => void;
+   onClick: () => void;
   size?: number;
   labelSize?: string;
 }
 
-const DesktopIcon: React.FC<DesktopIconProps> = ({ icon, label, onDoubleClick, size = 56, labelSize = "text-xs" }) => (
+const DesktopIcon: React.FC<DesktopIconProps> = ({ icon, label,  onClick, size = 56, labelSize = "text-xs" }) => (
   <div
     className="flex flex-col items-center cursor-pointer select-none group"
     tabIndex={0}
-    onDoubleClick={onDoubleClick}
+     onClick={ onClick}
     role="button"
     aria-label={label}
     style={{ width: size + 12 }}
