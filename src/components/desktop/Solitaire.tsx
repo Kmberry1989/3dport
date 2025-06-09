@@ -7,7 +7,7 @@ import {
   solitaireDeal,
   solitaireIsWon,
 } from "klondike-solitaire";
-import type { Card } from "klondike-solitaire/dist/src/card/card";
+import type { Card } from "klondike-solitaire";
 
 const Solitaire = () => {
   const [game, setGame] = useState(() => Game());
@@ -69,39 +69,27 @@ const Solitaire = () => {
   return (
     <div className="space-y-2 bg-green-800 p-2 text-xs text-white font-sans">
       <div className="flex justify-between">
-        <div className="space-y-1">
-          <div className="text-center">Stock</div>
-          {renderPile(game.stock, onCard)}
-          <button onClick={deal} className="mt-1 rounded border px-1 text-black">Deal</button>
-        </div>
-        <div className="space-y-1">
-          <div className="text-center">Waste</div>
-          {renderPile(game.waste, onCard)}
-        </div>
-        <div className="flex space-x-2">
-          {game.foundation.map((pile, i) => (
-            <div key={i} className="space-y-1">
-              <div className="text-center">Foundation {i + 1}</div>
-              {renderPile(pile, onCard)}
-              <button onClick={onBuildFoundation} className="rounded border px-1 text-black">Build</button>
-            </div>
-          ))}
-        </div>
+        <button onClick={deal}>Deal</button>
+        <button onClick={reset}>Reset</button>
+        <span>{solitaireIsWon(game) ? "You won!" : ""}</span>
       </div>
-      <div className="space-y-1">
-        <div className="text-center">Tableau</div>
-        <div className="flex space-x-2">
-          {game.tableau.map((lane, i) => (
-            <div key={i} className="space-y-1">
-              {renderPile(lane, onCard)}
-              <button onClick={() => onBuildTableau(i)} className="rounded border px-1 text-black">Build</button>
-            </div>
-          ))}
-        </div>
+      <div className="flex space-x-2">
+        {game.foundation.map((pile: Card[], i: number) => (
+          <button key={i} onClick={onBuildFoundation}>
+            {renderPile(pile)}
+          </button>
+        ))}
       </div>
-      <div className="space-x-2">
-        <button onClick={reset} className="rounded border bg-gray-300 px-1 text-black">Reset</button>
-        {solitaireIsWon(game) && <span className="font-bold">You won!</span>}
+      <div className="flex space-x-2">
+        {game.tableau.map((pile, i) => (
+          <button key={i} onClick={() => onBuildTableau(i)}>
+            {renderPile(pile, onCard)}
+          </button>
+        ))}
+      </div>
+      <div className="flex space-x-2">
+        {renderPile(game.stock, onCard)}
+        {renderPile(game.waste, onCard)}
       </div>
     </div>
   );
