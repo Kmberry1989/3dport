@@ -241,14 +241,6 @@ const Desktop = () => {
       </div>
       {/* Home button fixed at bottom left with marquee cards above */}
       <div className="fixed bottom-4 left-4 z-50 flex flex-col items-start pointer-events-auto gap-2">
-        {/* Marquee cards (placeholder) */}
-        <div className="w-[240px] overflow-x-auto whitespace-nowrap flex flex-row gap-2 mb-2">
-          {/* Example cards, replace with real data if available */}
-          <div className="inline-block bg-teal-700 text-white px-3 py-1 rounded shadow">Card 1</div>
-          <div className="inline-block bg-teal-700 text-white px-3 py-1 rounded shadow">Card 2</div>
-          <div className="inline-block bg-teal-700 text-white px-3 py-1 rounded shadow">Card 3</div>
-          <div className="inline-block bg-teal-700 text-white px-3 py-1 rounded shadow">Card 4</div>
-        </div>
         <a
           href="/"
           className="bg-teal-700 hover:bg-teal-500 text-white font-bold rounded-full px-6 py-3 shadow-lg border-2 border-white text-lg transition-all"
