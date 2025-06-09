@@ -1,13 +1,63 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import { styles } from "../../constants/styles";
 import { config } from "../../constants/config";
+
+import stickyC from "../../assets/sticky/sticky-c.png";
+import stickyL from "../../assets/sticky/sticky-li.png";
+import stickyI from "../../assets/sticky/sticky-li.png";
+import stickyC2 from "../../assets/sticky/sticky-c2.png";
+import stickyK from "../../assets/sticky/sticky-k.png";
+import stickyH from "../../assets/sticky/sticky-h.png";
+import stickyE from "../../assets/sticky/sticky-e.png";
+import stickyR from "../../assets/sticky/sticky-re.png";
+
+const notes = [
+  stickyC,
+  stickyL,
+  stickyI,
+  stickyC2,
+  stickyK,
+  stickyH,
+  stickyE,
+  stickyR,
+  stickyE,
+];
+
+const positions = [
+  { left: "30%", top: "35%" },
+  { left: "38%", top: "32%" },
+  { left: "46%", top: "34%" },
+  { left: "54%", top: "35%" },
+  { left: "62%", top: "32%" },
+  { left: "37%", top: "50%" },
+  { left: "45%", top: "52%" },
+  { left: "53%", top: "51%" },
+  { left: "61%", top: "52%" },
+];
 
 
 
 const Hero = () => {
   const navigate = useNavigate();
+  const [visible, setVisible] = useState(0);
+
+  useEffect(() => {
+    const timers = notes.map((_, i) =>
+      setTimeout(() => setVisible((v) => Math.max(v, i + 1)), (i + 1) * 300)
+    );
+    return () => {
+      timers.forEach(clearTimeout);
+    };
+  }, []);
+
+  const handleClick = () => {
+    setVisible(0);
+    setTimeout(() => navigate('/desktop'), 300);
+  };
+
   return (
     <section className={`relative mx-auto h-screen w-full`}>
       {/* Hero background monitor image (clickable) */}
@@ -16,9 +66,21 @@ const Hero = () => {
         style={{
           background: `url('/herobg.png') center/cover no-repeat`,
         }}
-        onClick={() => navigate('/desktop')}
+        onClick={handleClick}
         title="Click to open desktop"
-      />
+      >
+        {notes.slice(0, visible).map((src, i) => (
+          <motion.img
+            key={i}
+            src={src}
+            alt="note"
+            className="absolute w-24"
+            style={positions[i]}
+            initial={{ opacity: 0, rotate: -15 }}
+            animate={{ opacity: 1, rotate: 0 }}
+          />
+        ))}
+      </div>
       <div
         className={`absolute inset-0 top-[120px] mx-auto max-w-7xl ${styles.paddingX} flex flex-row items-start gap-5`}
       >
