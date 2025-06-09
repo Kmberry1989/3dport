@@ -82,7 +82,7 @@ const ICONS_ORDERED = ORDERED_ICONS.map(key => ICONS.find(i => i.key === key)).f
 const isMobile = window.innerWidth < 700;
 const ICON_SIZE = isMobile ? 96 : 56;
 const ICON_LABEL_SIZE = isMobile ? "text-base" : "text-xs";
-const ICONS_PER_COL = isMobile ? 4 : Math.max(1, Math.floor((window.innerHeight - 120) / (ICON_SIZE + 32)));
+const ICONS_PER_COL = isMobile ? 4 : 4; // Always 4 per column on desktop
 const columns: Array<typeof ICONS> = [];
 for (let i = 0; i < ICONS_ORDERED.length; i += ICONS_PER_COL) {
   columns.push(ICONS_ORDERED.slice(i, i + ICONS_PER_COL));

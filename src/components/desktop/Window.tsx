@@ -61,7 +61,7 @@ const Window = ({
       <div
         ref={windowRef}
         className={`absolute bg-gray-800 border border-gray-500 shadow-2xl rounded-lg transition-all duration-300 animate-fade-in inset-2 w-auto h-auto`}
-        style={{ minWidth: 320, minHeight: 120, ...style }}
+        style={{ minWidth: 320, minHeight: 120, ...style, padding: 0 }}
         onClick={onClick}
       >
         <div className="window-title cursor-default bg-gray-700 px-2 py-1 flex justify-between items-center rounded-t-lg select-none">
@@ -87,7 +87,7 @@ const Window = ({
             </button>
           </div>
         </div>
-        <div className="p-2 bg-gray-800 overflow-auto max-h-[32rem] rounded-b-lg">
+        <div className="bg-gray-800 overflow-auto max-h-[calc(100vh-5rem)] rounded-b-lg flex-1" style={{padding: 8, minHeight: 0, minWidth: 0}}>
           {children}
         </div>
       </div>
