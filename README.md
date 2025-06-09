@@ -93,7 +93,7 @@ reactjs18-3d-portfolio/
 ├   └── logo.svg
 ├── .env
 ├── .eslintignore
-├── .eslintrc.cjs
+├── eslint.config.js
 ├── .gitignore
 ├── .prettierignore
 ├── .prettierrc.cjs
