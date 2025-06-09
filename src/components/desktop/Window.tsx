@@ -20,7 +20,7 @@ const Window = ({
   onClose,
   children,
   maximized = true,
-  showHomeButton = true,
+  showHomeButton = false,
   style = {},
   onClick,
 }: Props) => {

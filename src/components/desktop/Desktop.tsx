@@ -5,7 +5,6 @@ import wallpaper from "../../assets/mockups/desktop/desktop-wallpaper.jpg";
 import userIcon from "../../assets/mockups/desktop/desktop-userlogin.jpg";
 import DesktopIcon from "./DesktopIcon";
 import iconCalculator from "../../assets/mockups/desktop icons/icon-calculator.PNG?url";
-import iconContacts from "../../assets/mockups/desktop icons/icon-contacts.PNG?url";
 import iconDocuments from "../../assets/mockups/desktop icons/icon-documents.PNG?url";
 import iconEmail from "../../assets/mockups/desktop icons/icon-email.png?url";
 import iconBrowser from "../../assets/mockups/desktop icons/icon-browser.PNG?url";
@@ -19,7 +18,6 @@ import iconSolitaire from "../../assets/mockups/desktop icons/icon-solitaire.png
 import iconThisPC from "../../assets/mockups/desktop icons/icon-thispc.PNG?url";
 import iconVideos from "../../assets/mockups/desktop icons/icon-videos.PNG?url";
 import Calculator from "./Calculator";
-import Contacts from "./Contacts";
 import Notepad from "./Notepad";
 import Paint from "./Paint";
 import ThisPC from "./ThisPC";
@@ -34,7 +32,6 @@ import Solitaire from "./Solitaire";
 
 interface AppState {
   calculator: boolean;
-  contacts: boolean;
   documents: boolean;
   email: boolean;
   browser: boolean;
@@ -51,10 +48,9 @@ interface AppState {
 
 const ICONS = [
   { key: "calculator", label: "Calculator", icon: iconCalculator },
-  { key: "contacts", label: "Contacts", icon: iconContacts },
   { key: "documents", label: "Documents", icon: iconDocuments },
   { key: "email", label: "E-mail", icon: iconEmail },
-  { key: "browser", label: "Web Browser", icon: iconBrowser },
+  { key: "browser", label: "Browser", icon: iconBrowser },
   { key: "minesweeper", label: "Minesweeper", icon: iconMinesweeper },
   { key: "notepad", label: "Notepad", icon: iconNotepad },
   { key: "paint", label: "Paint", icon: iconPaint },
@@ -73,7 +69,6 @@ const ORDERED_ICONS = [
   "documents",
   "pictures",
   "videos",
-  "contacts",
   "email",
   "notepad",
   "paint",
@@ -98,7 +93,6 @@ const Desktop = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [open, setOpen] = useState<AppState>({
     calculator: false,
-    contacts: false,
     documents: false,
     email: false,
     browser: false,
@@ -162,7 +156,7 @@ const Desktop = () => {
   return (
     <div
       className="relative h-screen w-screen text-white select-none"
-      style={{ backgroundImage: `url(${wallpaper})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      style={{ backgroundImage: `url(${wallpaper})`, backgroundSize: "cover", backgroundPosition: "center", transform: "scale(0.9)", transformOrigin: "center center" }}
     >
       {/* Desktop icons grid */}
       <div
@@ -193,8 +187,8 @@ const Desktop = () => {
       {/* Application windows in z-index order */}
       {windowOrder.map(key => {
         if (!open[key as keyof AppState]) return null;
-        const titleMap = { calculator: "Calculator", contacts: "Contacts", documents: "Documents", email: "E-mail", browser: "Web Browser", minesweeper: "Minesweeper", notepad: "Notepad", paint: "Paint", pictures: "Pictures", print: "Print", recycle: "Recycle Bin", solitaire: "Solitaire", thispc: "This PC", videos: "Videos" };
-        const contentMap = { calculator: <Calculator />, contacts: <Contacts />, documents: <Documents />, email: <a href="mailto:rochelleberry731@gmail.com" className="text-blue-300 underline">Send E-mail</a>, browser: <WebBrowser />, minesweeper: <Minesweeper />, notepad: <Notepad />, paint: <Paint />, pictures: <Pictures />, print: <>Print function coming soon</>, recycle: <RecycleBin />, solitaire: <Solitaire />, thispc: <ThisPC />, videos: <Videos /> };
+        const titleMap = { calculator: "Calculator", documents: "Documents", email: "E-mail", browser: "Web Browser", minesweeper: "Minesweeper", notepad: "Notepad", paint: "Paint", pictures: "Pictures", print: "Print", recycle: "Recycle Bin", solitaire: "Solitaire", thispc: "This PC", videos: "Videos" };
+        const contentMap = { calculator: <Calculator />, documents: <Documents />, email: <a href="mailto:rochelleberry731@gmail.com" className="text-blue-300 underline">Send E-mail</a>, browser: <WebBrowser />, minesweeper: <Minesweeper />, notepad: <Notepad />, paint: <Paint />, pictures: <Pictures />, print: <>Print function coming soon</>, recycle: <RecycleBin />, solitaire: <Solitaire />, thispc: <ThisPC />, videos: <Videos /> };
         return (
           <Window
             key={key}
@@ -239,12 +233,12 @@ const Desktop = () => {
         <audio ref={tickSound} src="/tick.mp3" preload="auto" />
         <audio ref={chimeSound} src="/chime.mp3" preload="" />
       </div>
-      {/* Home button fixed at bottom left with marquee cards above */}
+      {/* Home button fixed at bottom left, smaller size */}
       <div className="fixed bottom-4 left-4 z-50 flex flex-col items-start pointer-events-auto gap-2">
         <a
           href="/"
-          className="bg-teal-700 hover:bg-teal-500 text-white font-bold rounded-full px-6 py-3 shadow-lg border-2 border-white text-lg transition-all"
-          style={{ minWidth: 80 }}
+          className="bg-teal-700 hover:bg-teal-500 text-white font-bold rounded-full px-3 py-2 shadow-lg border-2 border-white text-base transition-all"
+          style={{ minWidth: 48 }}
           title="Return Home"
         >
           Home

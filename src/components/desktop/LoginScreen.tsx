@@ -29,8 +29,8 @@ const LoginScreen = ({ onLogin, wallpaper }: LoginScreenProps) => {
           setTimeout(() => {
             play("startup");
             onLogin();
-          }, 1000);
-        }, 400);
+          }, 0); // was 1000, now 0 for 1s sooner
+        }, 0); // was 400, now 0 for 1s sooner
       }
     }, 120);
   };
