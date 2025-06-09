@@ -63,7 +63,9 @@ const App = () => {
             alt="Mascot Splash"
             className="w-56 h-56 object-contain rounded-full shadow-2xl transition-opacity duration-700"
             style={{ animation: "fadeOut 0.7s 0.8s forwards" }}
+            onError={e => { e.currentTarget.style.display = 'none'; const fallback = document.getElementById('mascot-fallback'); if (fallback) fallback.style.display = 'block'; }}
           />
+          <div id="mascot-fallback" style={{display:'none',color:'white',fontSize:'2rem',fontWeight:'bold'}}>Mascot Splash</div>
           <style>{`
             @keyframes fadeOut { to { opacity: 0; } }
             .animate-fade-in-out { animation: fadeIn 0.3s, fadeOut 0.7s 0.8s forwards; }
