@@ -1,17 +1,26 @@
 import Draggable from "react-draggable";
 import { ReactNode, useState, useRef, useEffect } from "react";
 import { useSound } from "../SoundManager";
+import { Link } from "react-router-dom";
 
 interface Props {
   title: string;
   onClose: () => void;
   children: ReactNode;
+  maximized?: boolean;
+  showHomeButton?: boolean;
 }
 
 type State = "normal" | "minimized" | "maximized";
 
-const Window = ({ title, onClose, children }: Props) => {
-  const [state, setState] = useState<State>("normal");
+const Window = ({
+  title,
+  onClose,
+  children,
+  maximized = true,
+  showHomeButton = true,
+}: Props) => {
+  const [state, setState] = useState<State>(maximized ? "maximized" : "normal");
   const { play } = useSound();
   const windowRef = useRef<HTMLDivElement>(null);
 
@@ -44,38 +53,24 @@ const Window = ({ title, onClose, children }: Props) => {
   }
 
   return (
-    <Draggable handle=".window-title" disabled={state === "maximized"}>
+    <Draggable handle=".window-title" disabled={true}>
       <div
         ref={windowRef}
-        className={`absolute bg-gray-800 border border-gray-500 shadow-2xl rounded-lg transition-all duration-300 animate-fade-in ${
-          {
-            normal: "top-20 left-20 w-96",
-            maximized: "inset-2 w-auto h-auto",
-          }[state]
-        }`}
+        className={`absolute bg-gray-800 border border-gray-500 shadow-2xl rounded-lg transition-all duration-300 animate-fade-in inset-2 w-auto h-auto`}
         style={{ minWidth: 320, minHeight: 120 }}
       >
-        <div className="window-title cursor-move bg-gray-700 px-2 py-1 flex justify-between items-center rounded-t-lg select-none">
+        <div className="window-title cursor-default bg-gray-700 px-2 py-1 flex justify-between items-center rounded-t-lg select-none">
           <span className="font-semibold tracking-wide">{title}</span>
-          <div className="space-x-1">
-            <button
-              onClick={() => {
-                setState("minimized");
-                play("close");
-              }}
-              title="Minimize"
-            >
-              _
-            </button>
-            <button
-              onClick={() => {
-                setState(state === "maximized" ? "normal" : "maximized");
-                play("open");
-              }}
-              title={state === "maximized" ? "Restore" : "Maximize"}
-            >
-              {state === "maximized" ? "🗗" : "□"}
-            </button>
+          <div className="space-x-1 flex items-center">
+            {showHomeButton && (
+              <Link
+                to="/"
+                className="text-white bg-teal-700 px-2 py-1 rounded hover:bg-teal-500 font-bold ml-2"
+                title="Return Home"
+              >
+                Home
+              </Link>
+            )}
             <button
               onClick={() => {
                 onClose();

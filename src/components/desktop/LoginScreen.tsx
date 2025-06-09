@@ -33,7 +33,6 @@ const LoginScreen = ({ onLogin, wallpaper }: LoginScreenProps) => {
       style={{ backgroundImage: `url(${wallpaper})`, backgroundSize: "cover" }}
     >
       <div className="bg-black bg-opacity-70 rounded-xl p-10 flex flex-col items-center shadow-2xl">
-        <img src={wallpaper} alt="User" className="w-24 h-24 rounded-full mb-4 border-4 border-teal-400" />
         <div className="text-white text-2xl font-bold mb-2">User Login</div>
         <div className="w-48">
           <input

@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SoundProvider } from "./components/SoundManager";
+import Mascot from "./components/Mascot";
 
 import {
   About,
@@ -32,7 +33,7 @@ const App = () => {
               <div className="bg-primary relative z-0">
                 <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
                   <Navbar />
-                  {/* <Mascot /> */}
+                  <Mascot />
                   <Hero />
                 </div>
                 <About />

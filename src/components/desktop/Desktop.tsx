@@ -6,7 +6,6 @@ import Documents from "./Documents";
 import Pictures from "./Pictures";
 import WebBrowser from "./WebBrowser";
 import LoginScreen from "./LoginScreen";
-import { Link } from "react-router-dom";
 import wallpaper from "../../assets/mockups/desktop/desktop-wallpaper.png";
 import userIcon from "../../assets/mockups/desktop/desktop-userlogin.png";
 import DesktopIcon from "./DesktopIcon";
@@ -66,6 +65,34 @@ const ICONS = [
   { key: "videos", label: "Videos", icon: iconVideos },
 ];
 
+// Utility: desktop icon order by real-life utility
+const ORDERED_ICONS = [
+  "thispc",
+  "browser",
+  "documents",
+  "pictures",
+  "videos",
+  "contacts",
+  "email",
+  "notepad",
+  "paint",
+  "calculator",
+  "solitaire",
+  "minesweeper",
+  "recycle"
+];
+const ICONS_ORDERED = ORDERED_ICONS.map(key => ICONS.find(i => i.key === key)).filter(Boolean) as typeof ICONS;
+
+// Responsive icon sizing and layout
+const isMobile = window.innerWidth < 700;
+const ICON_SIZE = isMobile ? 96 : 56;
+const ICON_LABEL_SIZE = isMobile ? "text-base" : "text-xs";
+const ICONS_PER_COL = isMobile ? 4 : Math.max(1, Math.floor((window.innerHeight - 120) / (ICON_SIZE + 32)));
+const columns: Array<typeof ICONS> = [];
+for (let i = 0; i < ICONS_ORDERED.length; i += ICONS_PER_COL) {
+  columns.push(ICONS_ORDERED.slice(i, i + ICONS_PER_COL));
+}
+
 const Desktop = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [open, setOpen] = useState<AppState>({
@@ -121,18 +148,67 @@ const Desktop = () => {
       className="relative h-screen w-screen text-white select-none"
       style={{ backgroundImage: `url(${wallpaper})`, backgroundSize: "cover" }}
     >
-      {/* Desktop icons */}
-      <div className="absolute left-0 top-0 p-6 flex flex-col gap-6 z-10">
-        {ICONS.map((icon) => (
-          <DesktopIcon
-            key={icon.key}
-            icon={icon.icon}
-            label={icon.label}
-            onDoubleClick={() => toggle(icon.key as keyof AppState)}
-          />
+      {/* Desktop icons grid */}
+      <div className={`absolute left-0 top-0 p-6 flex gap-12 z-10 ${isMobile ? "flex-row overflow-x-auto w-full" : ""}`} style={{height: isMobile ? ICON_SIZE + 120 : undefined}}>
+        {columns.map((col, colIdx) => (
+          <div key={colIdx} className="flex flex-col gap-8 items-center">
+            {col.map((iconObj) => (
+              <DesktopIcon
+                key={iconObj.key}
+                icon={iconObj.icon}
+                label={iconObj.label}
+                onDoubleClick={() => toggle(iconObj.key as keyof AppState)}
+                size={ICON_SIZE}
+                labelSize={ICON_LABEL_SIZE}
+              />
+            ))}
+          </div>
         ))}
       </div>
-      {/* Taskbar */}
+      {/* Application windows */}
+      {open.calculator && (
+        <Window title="Calculator" onClose={() => toggle("calculator")}> <Calculator /> </Window>
+      )}
+      {open.contacts && (
+        <Window title="Contacts" onClose={() => toggle("contacts")}> <Contacts /> </Window>
+      )}
+      {open.documents && (
+        <Window title="Documents" onClose={() => toggle("documents")}> <Documents /> </Window>
+      )}
+      {open.email && (
+        <Window title="E-mail" onClose={() => toggle("email")}> <a href="mailto:rochelleberry731@gmail.com" className="text-blue-300 underline">Send E-mail</a> </Window>
+      )}
+      {open.browser && (
+        <Window title="Web Browser" onClose={() => toggle("browser")}> <WebBrowser /> </Window>
+      )}
+      {open.minesweeper && (
+        <Window title="Minesweeper" onClose={() => toggle("minesweeper")}> <Minesweeper /> </Window>
+      )}
+      {open.notepad && (
+        <Window title="Notepad" onClose={() => toggle("notepad")}> <Notepad /> </Window>
+      )}
+      {open.paint && (
+        <Window title="Paint" onClose={() => toggle("paint")}> <Paint /> </Window>
+      )}
+      {open.pictures && (
+        <Window title="Pictures" onClose={() => toggle("pictures")}> <Pictures /> </Window>
+      )}
+      {open.print && (
+        <Window title="Print" onClose={() => toggle("print")}>Print function coming soon</Window>
+      )}
+      {open.recycle && (
+        <Window title="Recycle Bin" onClose={() => toggle("recycle")}> <RecycleBin /> </Window>
+      )}
+      {open.solitaire && (
+        <Window title="Solitaire" onClose={() => toggle("solitaire")}> <Solitaire /> </Window>
+      )}
+      {open.thispc && (
+        <Window title="This PC" onClose={() => toggle("thispc")}> <ThisPC /> </Window>
+      )}
+      {open.videos && (
+        <Window title="Videos" onClose={() => toggle("videos")}> <Videos /> </Window>
+      )}
+      {/* Taskbar and clock remain unchanged */}
       <div className="absolute bottom-0 left-0 w-full h-12 bg-black bg-opacity-70 flex items-center px-4 z-50 shadow-lg">
         {ICONS.filter(icon => open[icon.key as keyof AppState]).map(icon => (
           <button
@@ -163,102 +239,6 @@ const Desktop = () => {
         </button>
         <audio ref={tickSound} src="/tick.mp3" preload="auto" />
         <audio ref={chimeSound} src="/chime.mp3" preload="auto" />
-      </div>
-      {/* Application windows */}
-      {open.calculator && (
-        <Window title="Calculator" onClose={() => toggle("calculator")}>
-          {" "}
-          <Calculator />{" "}
-        </Window>
-      )}
-      {open.contacts && (
-        <Window title="Contacts" onClose={() => toggle("contacts")}>
-          {" "}
-          <Contacts />{" "}
-        </Window>
-      )}
-      {open.documents && (
-        <Window title="Documents" onClose={() => toggle("documents")}>
-          {" "}
-          <Documents />{" "}
-        </Window>
-      )}
-      {open.email && (
-        <Window title="E-mail" onClose={() => toggle("email")}>
-          {" "}
-          <a
-            href="mailto:rochelleberry731@gmail.com"
-            className="text-blue-300 underline"
-          >
-            Send E-mail
-          </a>{" "}
-        </Window>
-      )}
-      {open.browser && (
-        <Window title="Web Browser" onClose={() => toggle("browser")}>
-          {" "}
-          <WebBrowser />{" "}
-        </Window>
-      )}
-      {open.minesweeper && (
-        <Window title="Minesweeper" onClose={() => toggle("minesweeper")}>
-          {" "}
-          <Minesweeper />{" "}
-        </Window>
-      )}
-      {open.notepad && (
-        <Window title="Notepad" onClose={() => toggle("notepad")}>
-          {" "}
-          <Notepad />{" "}
-        </Window>
-      )}
-      {open.paint && (
-        <Window title="Paint" onClose={() => toggle("paint")}>
-          {" "}
-          <Paint />{" "}
-        </Window>
-      )}
-      {open.pictures && (
-        <Window title="Pictures" onClose={() => toggle("pictures")}>
-          {" "}
-          <Pictures />{" "}
-        </Window>
-      )}
-      {open.print && (
-        <Window title="Print" onClose={() => toggle("print")}>
-          Print function coming soon
-        </Window>
-      )}
-      {open.recycle && (
-        <Window title="Recycle Bin" onClose={() => toggle("recycle")}>
-          <RecycleBin />{" "}
-        </Window>
-      )}
-      {open.solitaire && (
-        <Window title="Solitaire" onClose={() => toggle("solitaire")}>
-          {" "}
-          <Solitaire />{" "}
-        </Window>
-      )}
-      {open.thispc && (
-        <Window title="This PC" onClose={() => toggle("thispc")}>
-          <ThisPC />{" "}
-        </Window>
-      )}
-      {open.videos && (
-        <Window title="Videos" onClose={() => toggle("videos")}>
-          <Videos />{" "}
-        </Window>
-      )}
-      <div className="p-4 space-x-4">
-        <button onClick={() => toggle("minesweeper")}>Minesweeper</button>
-        <button onClick={() => toggle("solitaire")}>Solitaire</button>
-        <button onClick={() => toggle("documents")}>My Documents</button>
-        <button onClick={() => toggle("pictures")}>My Pictures</button>
-        <button onClick={() => toggle("browser")}>Browser</button>
-        <Link to="/" className="ml-4 underline">
-          Back to site
-        </Link>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import mascotImg from "../assets/mockups/desktop/screens/desktop-userlogin.png";
+import mascotImg from "../assets/mockups/desktop/desktop-userlogin.png";
 
 const messages = [
   "Welcome! I'm your creative assistant.",
