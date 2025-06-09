@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { SoundProvider } from "./components/SoundManager";
 
 import {
   About,
@@ -22,30 +23,33 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div className="bg-primary relative z-0">
-              <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
-                <Navbar />
-                <Hero />
+    <SoundProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="bg-primary relative z-0">
+                <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
+                  <Navbar />
+                  {/* <Mascot /> */}
+                  <Hero />
+                </div>
+                <About />
+                <Experience />
+                <Tech />
+                <Works />
+                <Feedbacks />
+                <div className="relative z-0">
+                  <Contact />
+                </div>
               </div>
-              <About />
-              <Experience />
-              <Tech />
-              <Works />
-              <Feedbacks />
-              <div className="relative z-0">
-                <Contact />
-              </div>
-            </div>
-          }
-        />
-        <Route path="/desktop" element={<Desktop />} />
-      </Routes>
-    </BrowserRouter>
+            }
+          />
+          <Route path="/desktop" element={<Desktop />} />
+        </Routes>
+      </BrowserRouter>
+    </SoundProvider>
   );
 };
 

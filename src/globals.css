@@ -249,3 +249,11 @@ body, .bg-primary {
         -1.8em -1.8em 0 0em #ffffff;
     }
   }
+
+@keyframes fade-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-fade-in {
+  animation: fade-in 0.3s cubic-bezier(0.4,0,0.2,1);
+}

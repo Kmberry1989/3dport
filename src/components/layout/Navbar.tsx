@@ -5,8 +5,10 @@ import { styles } from "../../constants/styles";
 import { navLinks } from "../../constants";
 import { logo } from "../../assets";
 import { config } from "../../constants/config";
+import { useSound } from "../SoundManager";
 
 const Navbar = () => {
+  const { play } = useSound();
   const [active, setActive] = useState<string | null>();
   const [scrolled, setScrolled] = useState(false);
 
@@ -77,7 +79,10 @@ const Navbar = () => {
                 ${active === nav.id ? "text-teal-light" : "text-white"}
                 hover:text-teal-dark
               `}
-              onClick={() => setActive(nav.id)}
+              onClick={() => {
+                setActive(nav.id);
+                play("click");
+              }}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
