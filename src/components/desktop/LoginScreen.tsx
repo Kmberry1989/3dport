@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSound } from "../SoundManager";
 import userImg from "../../assets/mockups/desktop/desktop-user.png";
 
