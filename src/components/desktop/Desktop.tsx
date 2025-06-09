@@ -141,12 +141,7 @@ const Desktop = () => {
     if (!loginStarted) {
       return (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50" style={{backgroundImage: `url(${userIcon})`, backgroundSize: 'cover'}}>
-          <img
-            src={staticLoginImg}
-            alt="Login Screen"
-            className="rounded-xl shadow-2xl w-80 h-80 object-contain cursor-pointer animate-fade-in"
-            onClick={() => setLoginStarted(true)}
-          />
+          {/* Removed login screen image, only background remains */}
         </div>
       );
     }
