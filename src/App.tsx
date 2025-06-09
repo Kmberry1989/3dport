@@ -1,8 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SoundProvider } from "./components/SoundManager";
-import Mascot from "./components/Mascot";
-import { useState, useEffect, useRef } from "react";
-import mascotSplash from "./assets/rochellecartoon.PNG"; // update path if needed
+import { useEffect, useRef } from "react";
 
 import {
   About,
