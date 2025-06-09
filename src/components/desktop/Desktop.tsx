@@ -1,12 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import Window from "./Window";
-import Minesweeper from "./Minesweeper";
-import Solitaire from "./Solitaire";
-import Documents from "./Documents";
-import Pictures from "./Pictures";
-import WebBrowser from "./WebBrowser";
-import LoginScreen from "./LoginScreen";
-import wallpaper from "../../assets/mockups/desktop/desktop-wallpaper.png";
+import Mascot from "../Mascot";
+import staticLoginImg from "../../assets/mockups/desktop/desktop-userlogin.png";
+import wallpaper from "../../assets/desk-bg-notes.png";
 import userIcon from "../../assets/mockups/desktop/desktop-userlogin.png";
 import DesktopIcon from "./DesktopIcon";
 import iconCalculator from "../../assets/mockups/desktop icons/icon-calculator.PNG?url";
@@ -30,6 +26,12 @@ import Paint from "./Paint";
 import ThisPC from "./ThisPC";
 import Videos from "./Videos";
 import RecycleBin from "./RecycleBin";
+import LoginScreen from "./LoginScreen";
+import Documents from "./Documents";
+import WebBrowser from "./WebBrowser";
+import Minesweeper from "./Minesweeper";
+import Pictures from "./Pictures";
+import Solitaire from "./Solitaire";
 
 interface AppState {
   calculator: boolean;
@@ -112,6 +114,11 @@ const Desktop = () => {
     videos: false,
   });
   const [mute, setMute] = useState(false);
+  const [loginStarted, setLoginStarted] = useState(false);
+  const [windowOrder, setWindowOrder] = useState<string[]>([]);
+  const bringToFront = (key: string) => {
+    setWindowOrder((order) => [...order.filter(k => k !== key), key]);
+  };
 
   const toggle = (key: keyof AppState) =>
     setOpen((o) => ({ ...o, [key]: !o[key] }));
@@ -138,18 +145,35 @@ const Desktop = () => {
   }, []);
 
   if (!loggedIn) {
-    return (
-      <LoginScreen onLogin={() => setLoggedIn(true)} wallpaper={userIcon} />
-    );
+    if (!loginStarted) {
+      return (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50" style={{backgroundImage: `url(${userIcon})`, backgroundSize: 'cover'}}>
+          <img
+            src={staticLoginImg}
+            alt="Login Screen"
+            className="rounded-xl shadow-2xl w-80 h-80 object-contain cursor-pointer animate-fade-in"
+            onClick={() => setLoginStarted(true)}
+          />
+        </div>
+      );
+    }
+    return <LoginScreen onLogin={() => setLoggedIn(true)} wallpaper={userIcon} />;
   }
 
   return (
     <div
       className="relative h-screen w-screen text-white select-none"
-      style={{ backgroundImage: `url(${wallpaper})`, backgroundSize: "cover" }}
+      style={{ backgroundImage: `url(${wallpaper})`, backgroundSize: "cover", backgroundPosition: "center" }}
     >
+      <Mascot />
       {/* Desktop icons grid */}
-      <div className={`absolute left-0 top-0 p-6 flex gap-12 z-10 ${isMobile ? "flex-row overflow-x-auto w-full" : ""}`} style={{height: isMobile ? ICON_SIZE + 120 : undefined}}>
+      <div
+        className={`absolute left-0 top-0 p-0 flex z-10 w-full h-full ${isMobile ? "flex-row overflow-x-auto" : "gap-12"}`}
+        style={{height: '100%', width: '100%', maxWidth: '100vw', maxHeight: '100vh', overflow: isMobile ? 'auto' : 'auto'}}
+        onClick={(e) => {
+          if (e.target === e.currentTarget) window.location.href = "/";
+        }}
+      >
         {columns.map((col, colIdx) => (
           <div key={colIdx} className="flex flex-col gap-8 items-center">
             {col.map((iconObj) => (
@@ -157,7 +181,10 @@ const Desktop = () => {
                 key={iconObj.key}
                 icon={iconObj.icon}
                 label={iconObj.label}
-                onDoubleClick={() => toggle(iconObj.key as keyof AppState)}
+                onDoubleClick={() => {
+                  setOpen(o => ({ ...o, [iconObj.key]: true }));
+                  bringToFront(iconObj.key);
+                }}
                 size={ICON_SIZE}
                 labelSize={ICON_LABEL_SIZE}
               />
@@ -165,49 +192,23 @@ const Desktop = () => {
           </div>
         ))}
       </div>
-      {/* Application windows */}
-      {open.calculator && (
-        <Window title="Calculator" onClose={() => toggle("calculator")}> <Calculator /> </Window>
-      )}
-      {open.contacts && (
-        <Window title="Contacts" onClose={() => toggle("contacts")}> <Contacts /> </Window>
-      )}
-      {open.documents && (
-        <Window title="Documents" onClose={() => toggle("documents")}> <Documents /> </Window>
-      )}
-      {open.email && (
-        <Window title="E-mail" onClose={() => toggle("email")}> <a href="mailto:rochelleberry731@gmail.com" className="text-blue-300 underline">Send E-mail</a> </Window>
-      )}
-      {open.browser && (
-        <Window title="Web Browser" onClose={() => toggle("browser")}> <WebBrowser /> </Window>
-      )}
-      {open.minesweeper && (
-        <Window title="Minesweeper" onClose={() => toggle("minesweeper")}> <Minesweeper /> </Window>
-      )}
-      {open.notepad && (
-        <Window title="Notepad" onClose={() => toggle("notepad")}> <Notepad /> </Window>
-      )}
-      {open.paint && (
-        <Window title="Paint" onClose={() => toggle("paint")}> <Paint /> </Window>
-      )}
-      {open.pictures && (
-        <Window title="Pictures" onClose={() => toggle("pictures")}> <Pictures /> </Window>
-      )}
-      {open.print && (
-        <Window title="Print" onClose={() => toggle("print")}>Print function coming soon</Window>
-      )}
-      {open.recycle && (
-        <Window title="Recycle Bin" onClose={() => toggle("recycle")}> <RecycleBin /> </Window>
-      )}
-      {open.solitaire && (
-        <Window title="Solitaire" onClose={() => toggle("solitaire")}> <Solitaire /> </Window>
-      )}
-      {open.thispc && (
-        <Window title="This PC" onClose={() => toggle("thispc")}> <ThisPC /> </Window>
-      )}
-      {open.videos && (
-        <Window title="Videos" onClose={() => toggle("videos")}> <Videos /> </Window>
-      )}
+      {/* Application windows in z-index order */}
+      {windowOrder.map(key => {
+        if (!open[key as keyof AppState]) return null;
+        const titleMap = { calculator: "Calculator", contacts: "Contacts", documents: "Documents", email: "E-mail", browser: "Web Browser", minesweeper: "Minesweeper", notepad: "Notepad", paint: "Paint", pictures: "Pictures", print: "Print", recycle: "Recycle Bin", solitaire: "Solitaire", thispc: "This PC", videos: "Videos" };
+        const contentMap = { calculator: <Calculator />, contacts: <Contacts />, documents: <Documents />, email: <a href="mailto:rochelleberry731@gmail.com" className="text-blue-300 underline">Send E-mail</a>, browser: <WebBrowser />, minesweeper: <Minesweeper />, notepad: <Notepad />, paint: <Paint />, pictures: <Pictures />, print: <>Print function coming soon</>, recycle: <RecycleBin />, solitaire: <Solitaire />, thispc: <ThisPC />, videos: <Videos /> };
+        return (
+          <Window
+            key={key}
+            title={titleMap[key as keyof AppState]}
+            onClose={() => setOpen(o => ({ ...o, [key]: false }))}
+            style={{zIndex: 1000 + windowOrder.indexOf(key)}}
+            onClick={() => bringToFront(key)}
+          >
+            {contentMap[key as keyof AppState]}
+          </Window>
+        );
+      })}
       {/* Taskbar and clock remain unchanged */}
       <div className="absolute bottom-0 left-0 w-full h-12 bg-black bg-opacity-70 flex items-center px-4 z-50 shadow-lg">
         {ICONS.filter(icon => open[icon.key as keyof AppState]).map(icon => (
@@ -239,6 +240,17 @@ const Desktop = () => {
         </button>
         <audio ref={tickSound} src="/tick.mp3" preload="auto" />
         <audio ref={chimeSound} src="/chime.mp3" preload="auto" />
+      </div>
+      {/* Home button fixed at bottom center */}
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 flex justify-center pointer-events-auto">
+        <a
+          href="/"
+          className="bg-teal-700 hover:bg-teal-500 text-white font-bold rounded-full px-6 py-3 shadow-lg border-2 border-white text-lg transition-all"
+          style={{ minWidth: 80 }}
+          title="Return Home"
+        >
+          Home
+        </a>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { fadeIn } from "../../utils/motion";
 
 import { styles } from "../../constants/styles";
 import { config } from "../../constants/config";
@@ -31,10 +32,15 @@ const Hero = () => {
           <h1 className={`${styles.heroHeadText} text-white`}>
             <span className="text-stroke text-[#915EFF]">{config.hero.name}</span>
           </h1>
-          <p className={`${styles.heroSubText} text-white-100 mt-2`}>
+          <motion.p
+            initial="hidden"
+            animate="show"
+            variants={fadeIn("", "", 0.02, 1)}
+            className={`${styles.heroSubText} text-white-100 mt-2`}
+          >
             {config.hero.p[0]} <br className="hidden sm:block" />
             {config.hero.p[1]}
-          </p>
+          </motion.p>
         </div>
       </div>
       <div className="xs:bottom-10 absolute bottom-32 flex w-full items-center justify-center">

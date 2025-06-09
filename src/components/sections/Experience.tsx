@@ -3,6 +3,7 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
+import { motion } from "framer-motion";
 
 import "react-vertical-timeline-component/style.min.css";
 
@@ -11,6 +12,7 @@ import { SectionWrapper } from "../../hoc";
 import { Header } from "../atoms/Header";
 import { TExperience } from "../../types";
 import { config } from "../../constants/config";
+import { fadeIn } from "../../utils/motion";
 
 const ExperienceCard: React.FC<TExperience> = (experience) => {
   return (
@@ -61,13 +63,16 @@ const Experience = () => {
     <>
       <Header useMotion={true} {...config.sections.experience} />
 
-      <div className="mt-20 flex flex-col">
+      <motion.div
+        variants={fadeIn("", "", 0.02, 1)}
+        className="mt-20 flex flex-col"
+      >
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard key={index} {...experience} />
           ))}
         </VerticalTimeline>
-      </div>
+      </motion.div>
     </>
   );
 };

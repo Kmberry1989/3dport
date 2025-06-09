@@ -54,18 +54,16 @@ const Works = () => {
     <>
       <Header useMotion={true} {...config.sections.works} />
 
-      <div className="flex w-full">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="text-secondary mt-3 max-w-3xl text-[17px] leading-[30px]"
-        >
-          {config.sections.works.content}
-        </motion.p>
-      </div>
+      <motion.p
+        variants={fadeIn("", "", 0.02, 1)}
+        className="text-secondary mt-3 max-w-3xl text-[17px] leading-[30px]"
+      >
+        {config.sections.works.content}
+      </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-10 grid gap-4 grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <ProjectCard key={project.name} index={index} {...project} />
         ))}
       </div>
     </>

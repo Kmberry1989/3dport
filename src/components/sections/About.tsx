@@ -49,13 +49,13 @@ const About = () => {
       <Header useMotion={true} {...config.sections.about} />
 
       <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
+        variants={fadeIn("", "", 0.02, 1)}
         className="text-secondary mt-4 max-w-3xl text-[17px] leading-[30px]"
       >
         {config.sections.about.content}
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10 max-sm:justify-center">
+      <div className="mt-10 grid gap-4 grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

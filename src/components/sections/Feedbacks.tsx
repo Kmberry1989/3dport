@@ -51,9 +51,12 @@ const Feedbacks = () => {
         className={`${styles.padding} bg-tertiary min-h-[300px] rounded-2xl`}
       >
         <Header useMotion={true} {...config.sections.feedbacks} />
+        <motion.div
+          variants={fadeIn("", "", 0.02, 1)}
+        />
       </div>
       <div
-        className={`${styles.paddingX} -mt-20 flex flex-wrap gap-7 pb-14 max-sm:justify-center`}
+        className={`${styles.paddingX} -mt-20 pb-14 grid gap-7 grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4`}
       >
         {testimonials.map((testimonial, index) => (
           <FeedbackCard key={testimonial.name} index={index} {...testimonial} />

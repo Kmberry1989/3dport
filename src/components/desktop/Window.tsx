@@ -9,6 +9,8 @@ interface Props {
   children: ReactNode;
   maximized?: boolean;
   showHomeButton?: boolean;
+  style?: React.CSSProperties;
+  onClick?: () => void;
 }
 
 type State = "normal" | "minimized" | "maximized";
@@ -19,6 +21,8 @@ const Window = ({
   children,
   maximized = true,
   showHomeButton = true,
+  style = {},
+  onClick,
 }: Props) => {
   const [state, setState] = useState<State>(maximized ? "maximized" : "normal");
   const { play } = useSound();
@@ -57,7 +61,8 @@ const Window = ({
       <div
         ref={windowRef}
         className={`absolute bg-gray-800 border border-gray-500 shadow-2xl rounded-lg transition-all duration-300 animate-fade-in inset-2 w-auto h-auto`}
-        style={{ minWidth: 320, minHeight: 120 }}
+        style={{ minWidth: 320, minHeight: 120, ...style }}
+        onClick={onClick}
       >
         <div className="window-title cursor-default bg-gray-700 px-2 py-1 flex justify-between items-center rounded-t-lg select-none">
           <span className="font-semibold tracking-wide">{title}</span>
