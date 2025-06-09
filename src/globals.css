@@ -261,3 +261,17 @@ body, .bg-primary {
 .animate-fade-in {
   animation: fade-in 0.3s cubic-bezier(0.4,0,0.2,1);
 }
+
+/* New marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 24s linear infinite;
+  /* The width of the content should be at least 2x the container for seamless looping */
+}

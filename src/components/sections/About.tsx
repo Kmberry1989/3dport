@@ -46,24 +46,32 @@ const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => (
 const About = () => {
   return (
     <>
-      <div className="w-full overflow-x-auto whitespace-nowrap bg-black py-2 mb-4 rounded-lg">
+      <div className="w-full overflow-x-hidden bg-black py-4 mb-4 rounded-lg">
         <div
-          className="flex flex-row gap-6 items-center"
+          className="relative w-full h-24"
           style={{ minWidth: 600 }}
         >
-          {services.map((service, idx) => (
-            <div
-              key={service.title + idx}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 rounded-full shadow text-white text-lg font-semibold mr-2"
-            >
-              <img
-                src={service.icon}
-                alt={service.title}
-                className="w-8 h-8 object-contain"
-              />
-              <span>{service.title}</span>
-            </div>
-          ))}
+          <div
+            className="absolute left-0 top-0 flex flex-row gap-6 items-center animate-marquee will-change-transform h-24"
+            style={{ minWidth: 600, animation: 'marquee 24s linear infinite' }}
+            onMouseEnter={e => (e.currentTarget.style.animationPlayState = 'paused')}
+            onMouseLeave={e => (e.currentTarget.style.animationPlayState = 'running')}
+          >
+            {services.concat(services).map((service, idx) => (
+              <div
+                key={service.title + idx}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 rounded-full shadow text-white text-lg font-semibold mr-2 whitespace-nowrap flex-shrink-0 h-16"
+                style={{ lineHeight: '2.5rem', minHeight: '4rem' }}
+              >
+                <img
+                  src={service.icon}
+                  alt={service.title}
+                  className="w-10 h-10 object-contain"
+                />
+                <span>{service.title}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

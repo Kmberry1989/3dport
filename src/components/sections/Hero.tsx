@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 import { fadeIn } from "../../utils/motion";
 
 import { styles } from "../../constants/styles";
@@ -8,18 +7,9 @@ import { config } from "../../constants/config";
 
 
 const Hero = () => {
-  const navigate = useNavigate();
   return (
     <section className={`relative mx-auto h-screen w-full`}>
-      {/* Hero background monitor image (clickable) */}
-      <div
-        className="absolute inset-0 -z-10 cursor-pointer select-none"
-        style={{
-          background: `url('/herobg.png') center/cover no-repeat`,
-        }}
-        onClick={() => navigate('/desktop')}
-        title="Click to open desktop"
-      />
+      {/* No background image, no navigate */}
       <div
         className={`absolute inset-0 top-[120px] mx-auto max-w-7xl ${styles.paddingX} flex flex-row items-start gap-5`}
       >

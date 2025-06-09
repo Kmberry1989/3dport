@@ -81,10 +81,6 @@ const App = () => {
                 path="/"
                 element={
                   <div className="bg-solid-black relative z-0">
-                    <div
-                      className="absolute inset-0 -z-10 cursor-pointer select-none"
-                      style={{ background: `url('/herobg.png') center/cover no-repeat` }}
-                    />
                     {/* Sticky Navbar always on top */}
                     <div className="sticky top-0 z-50 w-full backdrop-blur-md bg-black/40">
                       <Navbar />
