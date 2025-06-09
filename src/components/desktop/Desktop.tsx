@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import Window from "./Window";
-import staticLoginImg from "../../assets/mockups/desktop/desktop-userlogin.jpg";
 import wallpaper from "../../assets/mockups/desktop/desktop-wallpaper.jpg";
 import userIcon from "../../assets/mockups/desktop/desktop-userlogin.jpg";
 import DesktopIcon from "./DesktopIcon";
@@ -107,7 +106,6 @@ const Desktop = () => {
     videos: false,
   });
   const [mute, setMute] = useState(false);
-  const [loginStarted, setLoginStarted] = useState(false);
   const [windowOrder, setWindowOrder] = useState<string[]>([]);
   const bringToFront = (key: string) => {
     setWindowOrder((order) => [...order.filter(k => k !== key), key]);
@@ -138,13 +136,6 @@ const Desktop = () => {
   }, []);
 
   if (!loggedIn) {
-    if (!loginStarted) {
-      return (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50" style={{backgroundImage: `url(${userIcon})`, backgroundSize: 'cover'}}>
-          {/* Removed login screen image, only background remains */}
-        </div>
-      );
-    }
     return <LoginScreen onLogin={() => setLoggedIn(true)} wallpaper={userIcon} />;
   }
 
