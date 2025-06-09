@@ -51,7 +51,7 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
 
 const Works = () => {
   return (
-    <>
+    <div className="bg-black">
       <Header useMotion={true} {...config.sections.works} />
 
       <motion.p
@@ -61,12 +61,12 @@ const Works = () => {
         {config.sections.works.content}
       </motion.p>
 
-      <div className="mt-10 grid gap-4 grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="mt-20 flex flex-wrap gap-7 justify-center">
         {projects.map((project, index) => (
-          <ProjectCard key={project.name} index={index} {...project} />
+          <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

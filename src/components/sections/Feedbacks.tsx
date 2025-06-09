@@ -46,7 +46,7 @@ const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
 
 const Feedbacks = () => {
   return (
-    <div className="bg-black-100 mt-12 rounded-[20px]">
+    <div className="mt-12 rounded-[20px] bg-black">
       <div
         className={`${styles.padding} bg-tertiary min-h-[300px] rounded-2xl`}
       >
@@ -56,10 +56,10 @@ const Feedbacks = () => {
         />
       </div>
       <div
-        className={`${styles.paddingX} -mt-20 pb-14 grid gap-7 grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4`}
+        className="-mt-20 flex flex-wrap gap-7 pb-14"
       >
         {testimonials.map((testimonial, index) => (
-          <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
+          <FeedbackCard key={index} index={index} {...testimonial} />
         ))}
       </div>
     </div>

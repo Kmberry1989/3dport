@@ -7,7 +7,7 @@ const Tech = () => {
   // Only show the first 8 technologies
   const visibleTechnologies = technologies.slice(0, 8);
   return (
-    <>
+    <div className="bg-black">
       <Header useMotion={true} p="" h2="Technology Experience" />
       <div className="flex flex-row flex-wrap justify-center gap-10">
         {visibleTechnologies.map((technology) => (
@@ -20,7 +20,7 @@ const Tech = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

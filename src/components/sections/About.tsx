@@ -46,6 +46,27 @@ const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => (
 const About = () => {
   return (
     <>
+      <div className="w-full overflow-x-auto whitespace-nowrap bg-black py-2 mb-4 rounded-lg">
+        <div
+          className="flex flex-row gap-6 items-center"
+          style={{ minWidth: 600 }}
+        >
+          {services.map((service, idx) => (
+            <div
+              key={service.title + idx}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 rounded-full shadow text-white text-lg font-semibold mr-2"
+            >
+              <img
+                src={service.icon}
+                alt={service.title}
+                className="w-8 h-8 object-contain"
+              />
+              <span>{service.title}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <Header useMotion={true} {...config.sections.about} />
 
       <motion.p
@@ -55,7 +76,7 @@ const About = () => {
         {config.sections.about.content}
       </motion.p>
 
-      <div className="mt-10 grid gap-4 grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="mt-10 grid gap-4 grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-black">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

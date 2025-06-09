@@ -237,7 +237,7 @@ const Desktop = () => {
           {now.toLocaleDateString([], { month: 'short', day: 'numeric', year: '2-digit' })}
         </button>
         <audio ref={tickSound} src="/tick.mp3" preload="auto" />
-        <audio ref={chimeSound} src="/chime.mp3" preload="auto" />
+        <audio ref={chimeSound} src="/chime.mp3" preload="" />
       </div>
       {/* Home button fixed at bottom left with marquee cards above */}
       <div className="fixed bottom-4 left-4 z-50 flex flex-col items-start pointer-events-auto gap-2">

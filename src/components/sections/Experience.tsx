@@ -60,7 +60,7 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
 
 const Experience = () => {
   return (
-    <>
+    <div className="bg-black">
       <Header useMotion={true} {...config.sections.experience} />
 
       <motion.div
@@ -73,7 +73,7 @@ const Experience = () => {
           ))}
         </VerticalTimeline>
       </motion.div>
-    </>
+    </div>
   );
 };
 

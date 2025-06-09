@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useSound } from "../SoundManager";
-import userImg from "../../assets/mockups/desktop/desktop-user.png";
 
 interface LoginScreenProps {
   onLogin: () => void;
@@ -45,7 +44,6 @@ const LoginScreen = ({ onLogin, wallpaper }: LoginScreenProps) => {
       onKeyDown={startAutoLogin}
     >
       <div className="bg-black bg-opacity-70 rounded-xl p-10 flex flex-col items-center shadow-2xl">
-        <img src={userImg} alt="User" className="w-24 h-24 rounded-full mb-4 border-4 border-teal-400 bg-white object-cover" />
         <div className="text-white text-2xl font-bold mb-2">User Login</div>
         <div className="w-48">
           <input
