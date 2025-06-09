@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SoundProvider } from "./components/SoundManager";
 import { useEffect, useRef, useState } from "react";
@@ -100,7 +99,6 @@ const App = () => {
                         filter: contentOpacity < 1 ? `blur(${(1 - contentOpacity) * 12}px)` : 'none',
                       }}
                     >
-                      {/* <Mascot /> */}
                       <Hero />
                       <About />
                       <Experience />
