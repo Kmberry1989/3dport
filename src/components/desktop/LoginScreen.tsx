@@ -44,6 +44,7 @@ const LoginScreen = ({ onLogin, wallpaper }: LoginScreenProps) => {
       onKeyDown={startAutoLogin}
     >
       <div className="bg-black bg-opacity-70 rounded-xl p-10 flex flex-col items-center shadow-2xl">
+        {/* Only show the login form, no user image */}
         <div className="text-white text-2xl font-bold mb-2">User Login</div>
         <div className="w-48">
           <input
