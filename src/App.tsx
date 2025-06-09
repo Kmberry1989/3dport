@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SoundProvider } from "./components/SoundManager";
 import { useEffect, useRef, useState } from "react";
+import mascotSplash from "./assets/rochellecartoon.png";
 
 import {
   About,
@@ -58,7 +59,7 @@ const App = () => {
       {showSplash && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-90 animate-fade-in-out">
           <img
-            src={"/mascotSplash.png"} // <-- use the correct path to your splash image
+            src={mascotSplash}
             alt="Mascot Splash"
             className="w-56 h-56 object-contain rounded-full shadow-2xl transition-opacity duration-700"
             style={{ animation: "fadeOut 0.7s 0.8s forwards" }}
