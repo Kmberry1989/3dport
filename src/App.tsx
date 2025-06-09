@@ -1,8 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SoundProvider } from "./components/SoundManager";
-import Mascot from "./components/Mascot";
 import { useState, useEffect } from "react";
-import mascotSplash from "./assets/rochellecartoon.PNG"; // update path if needed
+import mascotSplash from "./assets/rochellecartoon.PNG";
 
 import {
   About,
@@ -61,7 +60,6 @@ const App = () => {
                     />
                     <div className="relative z-0">
                       <Navbar />
-                      <Mascot />
                       <Hero />
                     </div>
                     <About />
